@@ -130,6 +130,11 @@ def make_arabic_docx(md_path, target):
         bidi = ppr.find("{%s}bidi" % ns["w"])
         if bidi is None: bidi = etree.SubElement(ppr,"{%s}bidi" % ns["w"])
         bidi.set("{%s}val" % ns["w"],"1")
+        style = ppr.find("{%s}pStyle" % ns["w"])
+        if style is not None and style.get("{%s}val" % ns["w"]) == "BodyText":
+            ind = ppr.find("{%s}ind" % ns["w"])
+            if ind is None: ind = etree.SubElement(ppr,"{%s}ind" % ns["w"])
+            ind.set("{%s}firstLine" % ns["w"],"288")  # KDP Arabic guidance: 0.2 in
         jc = ppr.find("{%s}jc" % ns["w"])
         if jc is None: jc = etree.SubElement(ppr,"{%s}jc" % ns["w"])
         jc.set("{%s}val" % ns["w"],"right")
@@ -139,6 +144,10 @@ def make_arabic_docx(md_path, target):
             rtl = rpr.find("{%s}rtl" % ns["w"])
             if rtl is None: rtl = etree.SubElement(rpr,"{%s}rtl" % ns["w"])
             rtl.set("{%s}val" % ns["w"],"1")
+            lang = rpr.find("{%s}lang" % ns["w"])
+            if lang is None: lang = etree.SubElement(rpr,"{%s}lang" % ns["w"])
+            lang.set("{%s}val" % ns["w"],"ar")
+            lang.set("{%s}bidi" % ns["w"],"ar")
             rf = rpr.find("{%s}rFonts" % ns["w"])
             if rf is None: rf = etree.SubElement(rpr,"{%s}rFonts" % ns["w"])
             rf.set("{%s}ascii" % ns["w"],"Noto Naskh Arabic")
@@ -147,6 +156,32 @@ def make_arabic_docx(md_path, target):
     files["word/document.xml"] = etree.tostring(xml, xml_declaration=True, encoding="UTF-8", standalone=True)
     with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED) as zout:
         for n,b in files.items(): zout.writestr(n,b)
+    doc = Document(target)
+    doc.core_properties.language = "ar"
+    doc.save(target)
+
+
+def validate_arabic_docx(path):
+    with zipfile.ZipFile(path, "r") as z:
+        from lxml import etree
+        xml = etree.fromstring(z.read("word/document.xml"))
+    ns = {"w":"http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+    paragraphs = xml.xpath(".//w:body/w:p", namespaces=ns)
+    if not paragraphs:
+        raise AssertionError("Arabic DOCX contains no paragraphs")
+    missing_rtl = [i for i,p in enumerate(paragraphs,1) if not p.xpath("./w:pPr/w:bidi[@w:val='1']", namespaces=ns)]
+    if missing_rtl:
+        raise AssertionError(f"Arabic DOCX paragraphs missing RTL direction: {missing_rtl[:10]}")
+    missing_indent = [i for i,p in enumerate(paragraphs,1)
+        if p.xpath("./w:pPr/w:pStyle[@w:val='BodyText']", namespaces=ns)
+        and not p.xpath("./w:pPr/w:ind[@w:firstLine='288']", namespaces=ns)]
+    if missing_indent:
+        raise AssertionError(f"Arabic body paragraphs missing 0.2in first-line indent: {missing_indent[:10]}")
+    missing_run_rtl = len(xml.xpath(".//w:r[.//w:t and not(w:rPr/w:rtl[@w:val='1'])]", namespaces=ns))
+    if missing_run_rtl:
+        raise AssertionError(f"Arabic DOCX contains {missing_run_rtl} text runs without RTL run direction")
+    return len(paragraphs)
+
 
 def draw_cover(title, author, out, arabic=False):
     W,H=1600,2560
@@ -220,6 +255,7 @@ def main():
     armd=OUT/"arabic-kindle-source.md"
     armd.write_text(frontmatter(TITLE_AR,AUTHOR_AR,"ar")+ar,encoding="utf-8")
     make_arabic_docx(armd,OUT/"هدية_من_الغائب_Kindle_RTL.docx")
+    arabic_docx_paragraphs = validate_arabic_docx(OUT/"هدية_من_الغائب_Kindle_RTL.docx")
     # English print interior: 6x9 in, black ink, cream paper assumption, no bleed.
     pdf=OUT/"A_Gift_from_the_One_Who_Left_Paperback_Interior_6x9.pdf"
     run(["pandoc",str(enmd),"-o",str(pdf),"--pdf-engine=xelatex",
@@ -240,7 +276,7 @@ def main():
     (OUT/"SHA256SUMS.txt").write_text("".join(f"{v}  {k}\n" for k,v in manifest.items()),encoding="utf-8")
     report={"english_chapters":36,"arabic_chapters":36,"english_print_pages":pages,
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
-            "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated",
+            "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_docx_paragraphs":arabic_docx_paragraphs,
             "english_print_pdf":"generated","covers":"preview only; approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
