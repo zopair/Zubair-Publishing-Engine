@@ -1,5 +1,6 @@
 name: Build KDP Release Candidates
 on:
+  workflow_dispatch:
   push:
     branches:
       - release/kdp-production-build
@@ -25,6 +26,8 @@ jobs:
           sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core fonts-noto-extra
           python -m pip install --upgrade pip
           python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
+      - name: Run manuscript regression tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Build and validate release candidates
         run: python publishing/build/build_release.py
       - name: Upload preview and release candidates
