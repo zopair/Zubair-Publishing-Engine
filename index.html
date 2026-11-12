@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="مساحة عمل محلية لإدارة المخطوطات وتجهيز الكتب للنشر.">
+  <title>Zubair Publishing Engine</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Zubair Publishing Engine">
+      <span class="brand-mark">Z</span>
+      <span><strong>Zubair Publishing</strong><small>Engine · الإصدار الأولي</small></span>
+    </a>
+    <span class="local-badge"><i></i> حفظ محلي</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">استوديو النشر الرقمي</p>
+      <h1>من المخطوطة إلى كتاب جاهز للنشر.</h1>
+      <p>مساحة عمل خفيفة تعمل من الهاتف، وتحتفظ بمحتواك على جهازك. لا حسابات إضافية ولا اشتراكات.</p>
+      <div class="hero-actions">
+        <button class="button button-primary" id="new-project">إنشاء كتاب</button>
+        <button class="button button-quiet" id="export-project" disabled>تصدير نسخة احتياطية</button>
+      </div>
+    </section>
+
+    <section class="workspace-grid" aria-label="مساحة العمل">
+      <aside class="panel project-panel">
+        <div class="panel-heading"><div><p class="eyebrow">المشروع</p><h2>بيانات الكتاب</h2></div><span class="step">01</span></div>
+        <form id="project-form">
+          <label for="book-title">عنوان الكتاب</label>
+          <input id="book-title" name="title" maxlength="180" placeholder="A Gift from the One Who Left" required>
+          <label for="book-author">اسم المؤلف</label>
+          <input id="book-author" name="author" maxlength="120" placeholder="اسم المؤلف">
+          <label for="book-language">لغة المخطوطة</label>
+          <select id="book-language" name="language">
+            <option value="en">English — الإنجليزية</option>
+            <option value="ar">العربية</option>
+          </select>
+          <label for="book-description">وصف الكتاب</label>
+          <textarea id="book-description" name="description" rows="4" maxlength="4000" placeholder="نبذة الكتاب..."></textarea>
+          <button class="button button-primary button-full" type="submit">حفظ بيانات الكتاب</button>
+        </form>
+        <p class="privacy-note">تبقى البيانات على هذا الجهاز ما لم تصدّرها أو تحذف بيانات المتصفح.</p>
+      </aside>
+
+      <section class="panel editor-panel">
+        <div class="panel-heading"><div><p class="eyebrow">المخطوطة</p><h2>الفصول والمحتوى</h2></div><span class="step">02</span></div>
+        <div class="chapter-toolbar">
+          <label class="sr-only" for="chapter-select">اختر فصلاً</label>
+          <select id="chapter-select" disabled><option>لا توجد فصول بعد</option></select>
+          <button class="button button-secondary" id="add-chapter" disabled>＋ فصل جديد</button>
+        </div>
+        <div id="chapter-empty" class="empty-state">
+          <span class="empty-icon">✎</span>
+          <strong>ابدأ بإضافة الفصل الأول</strong>
+          <p>اكتب الفصل واحفظه، وستتمكن لاحقاً من تصدير المخطوطة.</p>
+        </div>
+        <form id="chapter-form" hidden>
+          <label for="chapter-title">عنوان الفصل</label>
+          <input id="chapter-title" maxlength="180" placeholder="Chapter One — The First Meeting" required>
+          <label for="chapter-content">نص الفصل</label>
+          <textarea id="chapter-content" class="manuscript-input" rows="14" placeholder="اكتب نص الفصل هنا..." required></textarea>
+          <div class="editor-footer"><span id="word-count">0 كلمة</span><button class="button button-primary" type="submit">حفظ الفصل</button></div>
+        </form>
+      </section>
+    </section>
+
+    <section class="panel quality-panel">
+      <div class="panel-heading"><div><p class="eyebrow">بوابة الجودة</p><h2>فحص المخطوطة</h2></div><span class="step">03</span></div>
+      <div class="quality-row"><div><strong id="quality-title">لا يوجد مشروع محفوظ</strong><p id="quality-detail">أنشئ كتاباً وأضف فصوله لبدء الفحص.</p></div><button class="button button-secondary" id="run-validation" disabled>فحص الآن</button></div>
+      <ul id="validation-results" class="validation-results" aria-live="polite"></ul>
+    </section>
+
+    <footer class="footer"><span>Zubair Publishing Engine</span><span>Local-first · Open-source foundations · Zero subscription</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
