@@ -122,3 +122,10 @@ test("includes author name on the DOCX title page", () => {
   const archive = decodeUtf8(docx);
   assert.ok(archive.includes("Aly HUSSEIN FEKRY"));
 });
+
+
+test("export preflight requires an author name for KDP metadata", () => {
+  const result = inspectProjectForExport({ ...sampleBook, author: " " });
+  assert.equal(result.valid, false);
+  assert.ok(result.errors.includes("اسم المؤلف مطلوب لبيانات النشر."));
+});
