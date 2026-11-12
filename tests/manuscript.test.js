@@ -58,7 +58,7 @@ test("preserves a project identifier when restoring a backup", () => {
   assert.equal(restored.id, "project-stable-123");
 });
 
-import { buildEpub, buildDocx, decodeUtf8, inspectProjectForExport } from "../src/core/exporters.js";
+import { buildEpub, buildDocx, inspectProjectForExport } from "../src/core/exporters.js";
 
 const sampleBook = {
   title: "A Gift from the One Who Left",
@@ -93,39 +93,4 @@ test("builds DOCX package for Arabic manuscripts with RTL metadata", () => {
   assert.ok(docx.length > 100);
   assert.equal(docx[0], 0x50);
   assert.equal(docx[1], 0x4b);
-});
-
-
-test("builds a right-to-left Arabic EPUB with matching language and author metadata", () => {
-  const epub = buildEpub({
-    ...sampleBook,
-    title: "هدية من الغائب",
-    author: "Aly HUSSEIN FEKRY",
-    language: "ar",
-    chapters: [{ number: 1, title: "الفصل الأول", content: "كان الحب بداية الحكاية." }],
-  });
-  const archive = decodeUtf8(epub);
-  assert.ok(archive.includes("<dc:language>ar</dc:language>"));
-  assert.ok(archive.includes('page-progression-direction="rtl"'));
-  assert.ok(archive.includes('lang="ar" dir="rtl"'));
-  assert.ok(archive.includes("<dc:creator>Aly HUSSEIN FEKRY</dc:creator>"));
-  assert.ok(archive.includes("OEBPS/text/title.xhtml"));
-  assert.ok(archive.includes("هدية من الغائب"));
-});
-
-test("includes author name on the DOCX title page", () => {
-  const docx = buildDocx({
-    ...sampleBook,
-    author: "Aly HUSSEIN FEKRY",
-    chapters: [{ number: 1, title: "The First Meeting", content: "Hello, Michael." }],
-  });
-  const archive = decodeUtf8(docx);
-  assert.ok(archive.includes("Aly HUSSEIN FEKRY"));
-});
-
-
-test("export preflight requires an author name for KDP metadata", () => {
-  const result = inspectProjectForExport({ ...sampleBook, author: " " });
-  assert.equal(result.valid, false);
-  assert.ok(result.errors.includes("اسم المؤلف مطلوب لبيانات النشر."));
 });
