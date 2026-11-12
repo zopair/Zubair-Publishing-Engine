@@ -145,6 +145,14 @@ lang: ar
 
 """
 
+def pandoc_pdf_font_args():
+    # Pandoc otherwise loads lmodern by default when fontfamily is unset.
+    # iftex is already loaded by Pandoc's XeLaTeX template; reusing it suppresses
+    # the unnecessary lmodern dependency while mainfont=Noto Serif selects the
+    # actual document font through fontspec.
+    return ["-V", "fontfamily=iftex"]
+
+
 def kdp_rounded_page_count(pages):
     return pages + (pages % 2)
 
@@ -359,7 +367,7 @@ def main():
          "-V","geometry:paperwidth=6in","-V","geometry:paperheight=9in",
          "-V","geometry:inner=0.78in","-V","geometry:outer=0.55in",
          "-V","geometry:top=0.65in","-V","geometry:bottom=0.65in",
-         "-V","fontsize=11pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
+         "-V","fontsize=11pt","-V","mainfont=Noto Serif",*pandoc_pdf_font_args(),"-V","linestretch=1.12",
          "-V","documentclass=book","-V","classoption=oneside","--toc","--toc-depth=1"])
     strip_pdf_print_artifacts(pdf)
     pages=validate_pdf_document(pdf, 6, 9)
