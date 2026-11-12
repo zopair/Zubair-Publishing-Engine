@@ -6,6 +6,20 @@
 
 ---
 
+## Copyright
+
+Copyright © 2026 Aly HUSSEIN FEKRY
+
+All rights reserved.
+
+No part of this work may be reproduced, distributed, transmitted, stored, or adapted in any form or by any means without prior written permission from the rights holder, except for brief quotations used in reviews and other uses permitted by applicable copyright law.
+
+This notice applies to the English edition and its original protectable text, editorial selection, and arrangement. The Arabic edition is a separately prepared language edition. Rights in any third-party material, if present, remain with their respective owners.
+
+This is a work of fiction. Names, characters, places, and events are used fictitiously or are products of the author's imagination.
+
+---
+
 # Chapter 1 — The Seat by the Window
 
 The first time Emily Bennett noticed Michael Reed, he was arguing with a vending machine.
@@ -9436,3 +9450,14 @@ The path ahead was not the one she had imagined.
 It was still a path.
 
 And she was still walking.
+
+
+---
+
+## Digital Integrity Fingerprint
+
+**Fingerprint standard:** SHA-256 (UTF-8)
+
+**Digest:** `1c986b67e482d22cf20588f58ab8ef1a5e9f31f23a9194ed69216fdcccbbd3e5`
+
+This digest verifies the exact manuscript text preceding this fingerprint section, including the copyright notice. It is an integrity identifier, not encryption, a digital signature, or a government copyright registration. The release manifest records the digest and the separately generated file hashes for the final distribution files.
