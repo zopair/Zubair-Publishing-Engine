@@ -52,3 +52,8 @@ test("creates stable URL-safe slugs", () => {
   assert.equal(slugify("A Gift from the One Who Left"), "a-gift-from-the-one-who-left");
   assert.equal(slugify("  Chapter 01: First Light!  "), "chapter-01-first-light");
 });
+
+test("preserves a project identifier when restoring a backup", () => {
+  const restored = createProject({ id: "project-stable-123", title: "Restored Book" });
+  assert.equal(restored.id, "project-stable-123");
+});
