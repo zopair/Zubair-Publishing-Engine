@@ -157,3 +157,14 @@ This is not a stylistic decision. It is necessary to prevent the published Engli
 The six agreed review dimensions are the criteria for this audit; they are not approval to change manuscript passages. The manuscript files have been restored to the pre-review baseline on this branch. **No manuscript corrections are currently applied.** All proposed changes in this report remain pending your explicit approval.
 
 No stylistic rewriting is proposed. The recommended work is limited to restoring omitted source material, correcting an event-order error, and preserving the existing scenes and narrative voice.
+
+
+## Execution update — wedding-day continuity correction
+
+Implemented on `fix/wedding-day-death-canonical-manuscript`:
+- Michael's photograph box is now collected earlier; he leaves his parents' home and drives directly to the wedding venue.
+- English and Arabic Chapter 30 now explicitly place the collision on his route to the wedding venue.
+- The consolidated English manuscript now uses canonical grief-arc Chapters 31 and 32: `The Morning That Never Came` and `The Things That Remain`.
+- The obsolete honeymoon and married-life drafts are retained only under `manuscript/archive/en/obsolete-wedding-arc/` and are excluded from the novel's canonical sequence.
+
+The wedding never takes place. Michael and Emily do not marry, and there is no honeymoon in the canonical story.
