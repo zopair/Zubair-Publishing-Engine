@@ -149,6 +149,10 @@ lang: ar
 
 """
 
+def kdp_rounded_page_count(pages):
+    return pages + (pages % 2)
+
+
 def validate_pdf_trim(width_pt, height_pt, expected_width_in, expected_height_in, tolerance_pt=0.5):
     expected_width_pt = expected_width_in * 72
     expected_height_pt = expected_height_in * 72
@@ -377,9 +381,9 @@ def main():
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
             "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_front_matter":"single title and copyright section","arabic_docx_paragraphs":arabic_docx_paragraphs,
             "english_print_pdf":"generated and prepress-validated","print_pdf_prepress":pdf_qa,
-            "paperback_cover_dimensions":{"interior_pdf_pages":pages,"kdp_rounded_page_count":pages+(pages%2),"paper":"cream",
-                "spine_width_in":round((pages+(pages%2))*0.0025,4),
-                "full_wrap_width_in":round(12.25+(pages+(pages%2))*0.0025,4),"full_wrap_height_in":9.25},
+            "paperback_cover_dimensions":{"interior_pdf_pages":pages,"kdp_rounded_page_count":kdp_rounded_page_count(pages),"paper":"cream",
+                "spine_width_in":round(kdp_rounded_page_count(pages)*0.0025,4),
+                "full_wrap_width_in":round(12.25+kdp_rounded_page_count(pages)*0.0025,4),"full_wrap_height_in":9.25},
             "covers":"front-cover previews only; author approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
