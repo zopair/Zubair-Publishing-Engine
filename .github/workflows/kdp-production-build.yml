@@ -27,6 +27,12 @@ jobs:
           sudo apt-get install -y --no-install-recommends pandoc texlive-xetex fonts-noto-core
           python -m pip install --upgrade pip
           python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
+      - name: Verify XeLaTeX font stack
+        run: |
+          command -v xelatex
+          kpsewhich fontspec.sty
+          kpsewhich iftex.sty
+          fc-match "Noto Serif"
       - name: Run manuscript regression tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Build and validate release candidates
