@@ -346,6 +346,48 @@ def draw_cover(title, author, out, arabic=False):
     d.rounded_rectangle((75,75,W-75,H-75),radius=22,outline=(197,155,108,150),width=4)
     im.convert("RGB").save(out,quality=95)
 
+def create_full_wrap(front_path, output_path, interior_pages):
+    rounded = kdp_rounded_page_count(interior_pages)
+    spine_in = rounded * 0.0025
+    width_in = 12.25 + spine_in
+    height_in = 9.25
+    if (rounded, round(spine_in, 3), round(width_in, 3), height_in) != (280, 0.700, 12.950, 9.25):
+        raise AssertionError("Paperback wrap does not match locked 280-page KDP geometry")
+    dpi = 300
+    width, height = round(width_in*dpi), round(height_in*dpi)
+    bleed, trim, spine = 38, 1800, round(spine_in*dpi)
+    canvas = Image.new("RGB", (width,height), (32,35,48))
+    front = Image.open(front_path).convert("RGB")
+    target_ratio = 2/3
+    if front.width/front.height > target_ratio:
+        crop = round(front.height*target_ratio); left=(front.width-crop)//2
+        front=front.crop((left,0,left+crop,front.height))
+    else:
+        crop = round(front.width/target_ratio); top=(front.height-crop)//2
+        front=front.crop((0,top,front.width,top+crop))
+    front=front.resize((trim,2700),Image.Resampling.LANCZOS)
+    canvas.paste(front,(bleed+trim+spine,bleed))
+    d=ImageDraw.Draw(canvas)
+    d.rectangle((bleed,bleed,bleed+trim,bleed+2700),fill=(35,39,53))
+    title=ImageFont.truetype(FONT_BOLD,54); body=ImageFont.truetype(FONT,32)
+    d.text((bleed+140,bleed+260),TITLE_EN,font=title,fill=(248,236,214))
+    copy=("Emily Bennett and Michael Reed grew up together, found their way back to each other, and began planning a future. But Michael never reaches the wedding.\\n\\nA contemporary story of first love, family, grief, memory, and the fragile work of beginning again.")
+    y=bleed+390
+    for para in copy.split("\\n"):
+        d.text((bleed+140,y),para,font=body,fill=(235,229,216)); y+=100
+    # Blank 2 x 1.2 inch barcode reserve at lower-right of the back cover.
+    bw,bh=600,360; bx=bleed+trim-bw-60; by=bleed+2700-bh-60
+    d.rectangle((bx,by,bx+bw,by+bh),fill=(255,255,255))
+    # Spine is a clean, unprinted dark strip; avoids rotated-text clipping.
+    d.rectangle((bleed+trim,bleed,bleed+trim+spine,bleed+2700),fill=(24,28,40))
+    canvas.convert("CMYK").save(output_path,format="PDF",resolution=dpi)
+    reader=PdfReader(str(output_path))
+    if len(reader.pages)!=1: raise AssertionError("Full-wrap must be one PDF page")
+    box=reader.pages[0].mediabox
+    validate_pdf_trim(box.width,box.height,width_in,height_in,tolerance_pt=0.75)
+    return {"pages":1,"width_in":width_in,"height_in":height_in,"spine_width_in":spine_in,"page_count_basis":rounded,"source_interior_pages":interior_pages,"color_space":"CMYK","resolution_dpi":dpi,"barcode_reserve_in":{"width":2.0,"height":1.2,"blank":True}}
+
+
 def main():
     en=source_text(EN); ar=source_text(AR)
     assert_master(en,False); assert_master(ar,True)
@@ -375,6 +417,7 @@ def main():
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
     draw_cover(TITLE_EN,AUTHOR_EN,OUT/"Cover_Preview_English.png",False)
     draw_cover(TITLE_AR,AUTHOR_AR,OUT/"Cover_Preview_Arabic.png",True)
+    cover_qa = create_full_wrap(OUT/"Cover_Preview_English.png", OUT/"A_Gift_from_the_One_Who_Left_Paperback_Full_Wrap.pdf", pages)
     # metadata report and hashes
     manifest={}
     for p in sorted(OUT.iterdir()):
@@ -389,6 +432,7 @@ def main():
                 "spine_width_in":round(kdp_rounded_page_count(pages)*0.0025,4),
                 "full_wrap_width_in":round(12.25+kdp_rounded_page_count(pages)*0.0025,4),"full_wrap_height_in":9.25},
             "covers":"front-cover previews only; author approval required",
+            "paperback_full_wrap":"generated and geometry-validated","paperback_full_wrap_qa":cover_qa,
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
     (OUT/"build-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
