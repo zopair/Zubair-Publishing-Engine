@@ -1,0 +1,36 @@
+name: Build KDP Release Candidates
+on:
+  push:
+    branches:
+      - release/kdp-production-build
+    paths:
+      - "publishing/build/**"
+      - "manuscript/en/FULL-ENGLISH-MANUSCRIPT.md"
+      - "manuscript/ar/FULL-ARABIC-MANUSCRIPT.md"
+      - ".github/workflows/kdp-production-build.yml"
+permissions:
+  contents: read
+  actions: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install publishing toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core fonts-noto-extra
+          python -m pip install --upgrade pip
+          python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
+      - name: Build and validate release candidates
+        run: python publishing/build/build_release.py
+      - name: Upload preview and release candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: kdp-release-candidates
+          path: publishing/release-candidate/
+          if-no-files-found: error
+          retention-days: 30
