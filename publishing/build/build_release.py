@@ -137,8 +137,12 @@ def validate_english_epub(path):
                             for name in names if name.lower().endswith((".xhtml", ".html", ".htm")))
         opf = "\n".join(archive.read(name).decode("utf-8", errors="replace")
                           for name in names if name.lower().endswith(".opf"))
-    visible = re.sub(r"<[^>]+>", " ", xhtml)
-    visible = re.sub(r"\s+", " ", visible)
+    # EPUB document titles in <head> and navigation labels are metadata/UI,
+    # not the reader-facing title-page heading. Count only reading-content body text.
+    reading_content = re.sub(r"<head\\b[^>]*>.*?</head>", " ", xhtml, flags=re.I | re.S)
+    reading_content = re.sub(r"<nav\\b[^>]*>.*?</nav>", " ", reading_content, flags=re.I | re.S)
+    visible = re.sub(r"<[^>]+>", " ", reading_content)
+    visible = re.sub(r"\\s+", " ", visible)
     if visible.count(TITLE_EN) != 1:
         raise AssertionError("English EPUB must contain exactly one visible title")
     if visible.count("Copyright © 2026 " + AUTHOR_EN) != 1:
