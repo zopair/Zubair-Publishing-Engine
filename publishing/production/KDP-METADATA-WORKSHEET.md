@@ -8,7 +8,7 @@ This worksheet separates confirmed facts from decisions that require the author'
 | Field | English edition | Arabic edition |
 |---|---|---|
 | Title | A Gift from the One Who Left | هدية من الغائب |
-| Author | Aly HUSSEIN FEKRY | Pending Arabic-script confirmation |
+| Author | Aly HUSSEIN FEKRY | على حسين فكرى |
 | Language | English | Arabic |
 | Format | Kindle eBook + Paperback | Kindle eBook |
 | Structure | 36 chapters + epilogue | 36 chapters + epilogue |
@@ -39,7 +39,7 @@ A Gift from the One Who Left is a contemporary story of first love, family, grie
 
 ## Decisions requiring author approval
 
-- [ ] Confirm the Arabic-script author name exactly as it should appear on the cover and KDP listing.
+- [x] Arabic author display confirmed: **على حسين فكرى**.
 - [ ] Approve the English description.
 - [ ] Approve the Arabic description.
 - [ ] Confirm primary Amazon marketplace.
