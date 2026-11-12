@@ -6,6 +6,8 @@ on:
       - release/kdp-production-build
     paths:
       - "publishing/build/**"
+      - "tests/**"
+      - "publishing/production/KDP-UPLOAD-METADATA.md"
       - "manuscript/en/FULL-ENGLISH-MANUSCRIPT.md"
       - "manuscript/ar/FULL-ARABIC-MANUSCRIPT.md"
       - ".github/workflows/kdp-production-build.yml"
