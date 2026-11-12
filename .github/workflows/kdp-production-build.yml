@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install publishing toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex fonts-noto-core
+          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core
           python -m pip install --upgrade pip
           python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
       - name: Verify XeLaTeX font stack
@@ -32,6 +32,7 @@ jobs:
           command -v xelatex
           kpsewhich fontspec.sty
           kpsewhich iftex.sty
+          kpsewhich pzdr.tfm
           fc-match "Noto Serif"
       - name: Run manuscript regression tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
