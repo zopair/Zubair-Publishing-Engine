@@ -137,10 +137,6 @@ author: "{author}"
 lang: ar
 ---
 
-# {title}
-
-**{author}**
-
 حقوق النشر © 2026 {author}
 
 جميع الحقوق محفوظة.
