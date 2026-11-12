@@ -42,3 +42,9 @@ class KdpPrepressValidationTests(unittest.TestCase):
             target = Path(tmp) / "arabic.docx"
             builder.make_arabic_docx(builder.AR, target)
             builder.validate_arabic_docx(target)
+
+    def test_arabic_chapter_13_matches_the_english_summer_program_start(self):
+        text = builder.source_text(builder.AR)
+        chapter13 = text.split("# الفصل الثالث عشر", 1)[1].split("# الفصل الرابع عشر", 1)[0]
+        self.assertIn("بدأ الأسبوع الأول من البرنامج الصيفي", chapter13)
+        self.assertNotIn("بحلول نهاية الصيف", chapter13)
