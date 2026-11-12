@@ -91,6 +91,30 @@ lang: ar
 
 """
 
+def validate_pdf_trim(width_pt, height_pt, expected_width_in, expected_height_in, tolerance_pt=0.5):
+    expected_width_pt = expected_width_in * 72
+    expected_height_pt = expected_height_in * 72
+    if abs(float(width_pt) - expected_width_pt) > tolerance_pt or abs(float(height_pt) - expected_height_pt) > tolerance_pt:
+        raise AssertionError(
+            f"PDF page size must be {expected_width_in} x {expected_height_in} in "
+            f"({expected_width_pt:.1f} x {expected_height_pt:.1f} pt); "
+            f"found {float(width_pt)/72:.3f} x {float(height_pt)/72:.3f} in"
+        )
+
+
+def validate_pdf_document(path, expected_width_in=6, expected_height_in=9):
+    reader = PdfReader(str(path))
+    if not reader.pages:
+        raise AssertionError("PDF contains no pages")
+    for index, page in enumerate(reader.pages, start=1):
+        box = page.mediabox
+        try:
+            validate_pdf_trim(box.width, box.height, expected_width_in, expected_height_in)
+        except AssertionError as exc:
+            raise AssertionError(f"PDF page size validation failed on page {index}: {exc}") from exc
+    return len(reader.pages)
+
+
 def make_arabic_docx(md_path, target):
     # Pandoc preserves Markdown structure; post-process OOXML for true RTL paragraph/run direction.
     run(["pandoc", str(md_path), "-o", str(target), "--from=markdown"])
@@ -199,10 +223,12 @@ def main():
     # English print interior: 6x9 in, black ink, cream paper assumption, no bleed.
     pdf=OUT/"A_Gift_from_the_One_Who_Left_Paperback_Interior_6x9.pdf"
     run(["pandoc",str(enmd),"-o",str(pdf),"--pdf-engine=xelatex",
-         "-V","papersize=6in,9in","-V","geometry:inner=0.78in,outer=0.55in,top=0.65in,bottom=0.65in",
+         "-V","geometry:paperwidth=6in","-V","geometry:paperheight=9in",
+         "-V","geometry:inner=0.78in","-V","geometry:outer=0.55in",
+         "-V","geometry:top=0.65in","-V","geometry:bottom=0.65in",
          "-V","fontsize=10.5pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
          "-V","documentclass=book","--toc","--toc-depth=1"])
-    pages=len(PdfReader(str(pdf)).pages)
+    pages=validate_pdf_document(pdf, 6, 9)
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
     draw_cover(TITLE_EN,AUTHOR_EN,OUT/"Cover_Preview_English.png",False)
     draw_cover(TITLE_AR,AUTHOR_AR,OUT/"Cover_Preview_Arabic.png",True)
@@ -213,7 +239,7 @@ def main():
             manifest[p.name]=hashlib.sha256(p.read_bytes()).hexdigest()
     (OUT/"SHA256SUMS.txt").write_text("".join(f"{v}  {k}\n" for k,v in manifest.items()),encoding="utf-8")
     report={"english_chapters":36,"arabic_chapters":36,"english_print_pages":pages,
-            "trim":"6 x 9 in (provisional)","paper":"cream, black ink (provisional)",
+            "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
             "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated",
             "english_print_pdf":"generated","covers":"preview only; approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
