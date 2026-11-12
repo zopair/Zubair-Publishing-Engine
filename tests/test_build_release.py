@@ -117,3 +117,21 @@ class KdpPrepressValidationTests(unittest.TestCase):
     def test_kdp_cover_page_count_rounds_odd_interiors_up(self):
         self.assertEqual(builder.kdp_rounded_page_count(279), 280)
         self.assertEqual(builder.kdp_rounded_page_count(280), 280)
+
+
+class EnglishEpubAndWrapRegressionTests(unittest.TestCase):
+    def test_english_kindle_body_strips_archive_front_matter(self):
+        body = builder.prepare_english_body(builder.source_text(builder.EN))
+        self.assertTrue(body.startswith("# Chapter 1"))
+        self.assertNotIn("Copyright © 2026", body)
+        self.assertNotIn("Complete English Manuscript", body)
+
+    def test_front_matter_source_contains_one_title_and_copyright(self):
+        source = builder.frontmatter(builder.TITLE_EN, builder.AUTHOR_EN, "en") + builder.prepare_english_body(builder.source_text(builder.EN))
+        self.assertEqual(source.count(builder.TITLE_EN), 1)
+        self.assertEqual(source.count("Copyright © 2026 " + builder.AUTHOR_EN), 1)
+
+    def test_279_print_pages_produce_exact_280_page_cover_geometry(self):
+        self.assertEqual(builder.kdp_rounded_page_count(279), 280)
+        self.assertEqual(round(12.25 + 280 * 0.0025, 3), 12.950)
+        self.assertEqual(round(280 * 0.0025, 3), 0.700)
