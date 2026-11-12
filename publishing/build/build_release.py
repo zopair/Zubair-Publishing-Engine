@@ -262,7 +262,7 @@ def main():
          "-V","geometry:paperwidth=6in","-V","geometry:paperheight=9in",
          "-V","geometry:inner=0.78in","-V","geometry:outer=0.55in",
          "-V","geometry:top=0.65in","-V","geometry:bottom=0.65in",
-         "-V","fontsize=10.5pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
+         "-V","fontsize=11pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
          "-V","documentclass=book","--toc","--toc-depth=1"])
     pages=validate_pdf_document(pdf, 6, 9)
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
