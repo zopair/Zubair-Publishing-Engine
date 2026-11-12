@@ -35,3 +35,10 @@ class KdpPrepressValidationTests(unittest.TestCase):
 
     def test_pdf_trim_validator_accepts_exact_6x9_page(self):
         builder.validate_pdf_trim(432, 648, 6, 9)
+
+    def test_arabic_docx_has_rtl_direction_and_first_line_indents(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as tmp:
+            target = Path(tmp) / "arabic.docx"
+            builder.make_arabic_docx(builder.AR, target)
+            builder.validate_arabic_docx(target)
