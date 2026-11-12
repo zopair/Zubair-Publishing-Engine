@@ -32,14 +32,14 @@ def source_text(path):
 
 def prepare_arabic_body(text):
     text = re.sub(
-        r"^# هدية من الغائب\\s*\\n.*?^---\\s*\\n",
+        r"^# هدية من الغائب\s*\n.*?^---\s*\n",
         "",
         text,
         count=1,
         flags=re.M | re.S,
     )
     text = re.sub(
-        r"^## حقوق النشر والملكية الفكرية\\s*\\n.*?^---\\s*\\n",
+        r"^## حقوق النشر والملكية الفكرية\s*\n.*?^---\s*\n",
         "",
         text,
         count=1,
