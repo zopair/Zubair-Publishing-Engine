@@ -29,6 +29,10 @@ if __name__ == "__main__":
 
 
 class KdpPrepressValidationTests(unittest.TestCase):
+    def test_xelatex_font_configuration_avoids_unneeded_lmodern_package(self):
+        args = builder.pandoc_pdf_font_args()
+        self.assertEqual(args, ["-V", "fontfamily=iftex"])
+
     def test_pdf_trim_validator_rejects_letter_page_when_6x9_is_required(self):
         with self.assertRaisesRegex(AssertionError, "PDF page size"):
             builder.validate_pdf_trim(612, 792, 6, 9)
