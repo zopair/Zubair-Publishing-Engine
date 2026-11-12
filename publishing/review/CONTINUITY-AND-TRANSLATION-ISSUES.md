@@ -25,7 +25,7 @@ The English source establishes the following progression:
 13. First month after Michael's death — Chapter 32.
 14. Archive creation, ethics, product conflict, and revised platform — Chapters 33–36.
 
-The current Arabic Chapter 19 is materially shorter than its English source and does not preserve the complete corresponding sequence. The proposed full translation must be reviewed and approved before it replaces the current chapter. Chapter 22 remains a separate later point in the university timeline.
+The Arabic Chapter 19 is not merely shortened: it reproduces almost the same scene sequence and wording as Arabic Chapter 22 (ملامح المستقبل), while its title reads حرمان جامعيان (a clear title typo). The English Chapter 19 is a different bridge chapter covering the university decisions, the summer before university, the first day, and the early long-distance routine. The Arabic edition therefore has a duplicated chapter where a distinct translation is required. Proposed action: translate the actual English Chapter 19 faithfully, then retain Arabic Chapter 22 as the later second-year chapter. This is a structural correction, not a stylistic rewrite.
 
 ## 2. Additional Arabic omissions and sequencing defects
 
@@ -81,6 +81,43 @@ The Arabic version omits the downstairs scene after Emily reads Michael's last m
 - Elizabeth moves through the kitchen mechanically, placing cups on a tray and forgetting why.
 
 **Proposed correction:** Restore this paragraph before Emily sits up. It establishes the family atmosphere and the immediate aftermath of the hospital before Sarah enters the bedroom.
+
+
+### E. Chapter 13 — opening chronology and omitted opening material
+
+**English source:** `manuscript/en/part-01/chapter-13-the-long-way-home.md`  
+**Arabic:** `manuscript/ar/part-01/chapter-13-the-long-way-home.md`
+
+The English chapter opens on the first week of Michael's summer program, then shows the message exchange, Emily reading it at her desk, and her writing-competition essay deadline and photography assignments. The Arabic chapter instead opens with a retrospective passage set at the end of summer, then immediately jumps back to “the first weeks.” It also omits the opening exchange and Emily's writing context.
+
+**Proposed correction:** Restore the English chapter's opening sequence in Arabic and remove the unmarked end-of-summer lead-in. Keep the existing translated scenes that follow.
+
+### F. Chapter 18 — engagement ring appears before the proposal
+
+**English source:** `manuscript/en/part-01/chapter-18-the-first-real-choice.md`  
+**Arabic:** `manuscript/ar/part-01/chapter-18-the-first-real-choice.md`
+
+During Emily's university acceptance celebration, the Arabic version says she looks at the ring on her hand. The engagement proposal does not occur until Chapter 25, and the English Chapter 18 contains no ring reference at this point.
+
+**Proposed correction:** Remove only the premature ring reference or replace it with a neutral action consistent with the scene. Do not add an engagement event here.
+
+### G. Chapter 29 — missing venue inspection transition
+
+**English source:** `manuscript/en/part-01/chapter-29-the-night-before-morning.md`  
+**Arabic:** `manuscript/ar/part-01/chapter-29-the-night-before-morning.md`
+
+The English text explicitly says James and David have gone to the wedding venue for a final inspection, leaving the house to the bridal group. The Arabic version omits this detail immediately before the women's dinner scene.
+
+**Proposed correction:** Restore the one-sentence transition before the dinner toast. This preserves the scene's physical continuity without changing the scene itself.
+
+### H. Chapter 36 — one clear Arabic grammar correction
+
+**English source:** `manuscript/en/part-02/chapter-36-a-place-to-remember.md`  
+**Arabic:** `manuscript/ar/part-02/chapter-36-a-place-to-remember.md`
+
+The sentence «لقد فقدت ابني، لكن أصبح لدي ابنة الآن» has a gender-agreement error.
+
+**Proposed correction:** «لقد فقدت ابني، لكن أصبحت لديّ ابنة الآن.» This is a minimal grammatical correction; preserve the remainder of Margaret's speech.
 
 ## 3. Continuity checks that currently align
 
