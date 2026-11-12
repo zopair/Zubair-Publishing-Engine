@@ -13,8 +13,9 @@
 
 ### Arabic edition
 - Kindle eBook only. KDP currently lists Arabic as an eBook-only language; Arabic paperback publishing is not currently available.
-- Submit DOC/DOCX or EPUB with right-to-left text direction. Arabic PDF is not an accepted Kindle eBook manuscript format.
-- Set the book language to Arabic and ensure the Arabic book details and manuscript metadata match the selected language.
+- Follow KDP's dedicated Arabic Word workflow as the primary production route: prepare a DOCX with true right-to-left paragraph direction, then validate the converted result in KDP's Online Previewer. EPUB is a generally supported eBook input format, but any Arabic EPUB should be separately tested in Kindle Previewer and KDP's Online Previewer before it is treated as release-ready.
+- Arabic PDF is not an accepted Kindle eBook manuscript format. KDP's supported-language page limits PDF eBook uploads to a specific list that does not include Arabic.
+- Select Arabic as the eBook language. KDP's Arabic-specific instructions also say the book details (including title and author name) should be entered in Arabic and match the selected language. The Arabic-script author name therefore requires the author's confirmation before setup.
 - Preview the converted file carefully for RTL direction, Arabic glyph shaping, spacing, punctuation, and mixed Arabic/Latin passages.
 
 ## 2. Manuscript and conversion requirements
@@ -29,7 +30,7 @@
 ## 3. Metadata controls
 
 - Author spelling is fixed as **Aly HUSSEIN FEKRY** for the English edition. Verify spelling before publication because KDP warns that the primary author field cannot be changed after publication without creating a new edition in relevant cases.
-- The Arabic edition's author-name display needs the author's confirmation in Arabic script before its metadata/title page is finalized.
+- The Arabic edition's author-name display needs the author's confirmation in Arabic script before its metadata/title page is finalized. Do not invent a transliteration.
 - Cover title, title page, and KDP title metadata must match exactly.
 - Prepare a reader-facing description without spoilers, misleading claims, URLs, reviews, or promotional language.
 - Select up to seven accurate search keyword phrases and up to three relevant categories. No unrelated or competitor-author keywords.
@@ -63,7 +64,9 @@ KDP requires disclosure of AI-generated text, images, or translations. AI-assist
 
 ## 7. Official Amazon KDP references
 
-- [Arabic publishing requirements](https://kdp.amazon.com/en_US/help/topic/GUQT4C8J6RR6V8TY)
+- [Arabic publishing requirements and Word formatting workflow](https://kdp.amazon.com/en_US/help/topic/GUQT4C8J6RR6V8TY)
+- [KDP supported languages and PDF language restrictions](https://kdp.amazon.com/en_US/help/topic/G200673300)
+- [KDP supported eBook manuscript formats](https://kdp.amazon.com/en_US/help/topic/G200634390)
 - [Supported book languages](https://kdp.amazon.com/en_US/help/topic/G200673300)
 - [Supported eBook manuscript formats](https://kdp.amazon.com/en_US/help/topic/G200634390)
 - [eBook manuscript formatting guide](https://kdp.amazon.com/en_US/help/topic/G200645680)
