@@ -59,3 +59,10 @@ class KdpPrepressValidationTests(unittest.TestCase):
             c.showPage(); c.save()
             with self.assertRaisesRegex(AssertionError, "blank or page-number-only"):
                 builder.validate_pdf_document(path, 6, 9)
+
+    def test_arabic_chapter_19_matches_the_two_campuses_admissions_arc(self):
+        text = builder.source_text(builder.AR)
+        chapter19 = text.split("# الفصل التاسع عشر", 1)[1].split("# الفصل العشرون", 1)[0]
+        self.assertIn("وصلت رسائل القبول الجامعي", chapter19)
+        self.assertIn("أربعون دقيقة", chapter19)
+        self.assertNotIn("بحلول نهاية العام الجامعي الثاني", chapter19)
