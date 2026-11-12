@@ -2,7 +2,7 @@
 
 ## Complete English Manuscript
 
-**Aly HUSSEIN FEKRY**
+
 
 ---
 
@@ -8645,219 +8645,301 @@ The day they had chosen became the day none of them would ever forget.
 
 ---
 
-# Chapter 31: The Morning That Never Came
+# Chapter 31: The First Morning After
 
-There was no morning after the wedding.
+The first morning of their married life began with a missing suitcase.
 
-There was only the morning after the hospital, and Emily could not remember how she had reached it.
+Emily stood in the hotel room doorway, holding one shoe and looking at the empty space beside the wardrobe.
 
-She woke in her childhood bedroom, still wearing the earrings her mother had fastened before the ceremony. Someone had removed the wedding dress and placed it carefully over a chair. Her phone was on the bedside table, its screen dark. The last message from Michael remained open.
+“Michael?”
 
-*I love you, Emily. Soon.*
+He appeared from the bathroom with a towel over his shoulder. “What happened?”
 
-She read it until the words stopped looking like words.
+“My small suitcase is missing.”
 
-Downstairs, the house was full of people speaking quietly. Sarah had stayed overnight. James was making coffee no one seemed able to drink. Elizabeth moved through the kitchen with a kind of mechanical purpose, placing cups on a tray and forgetting why she had picked them up.
+He looked around. “The blue one?”
 
-Emily sat up.
+“Yes.”
 
-For one brief second, she expected to hear Michael's voice from the hallway. She expected him to send a message apologizing for the delay, or to appear at the bedroom door with a joke about the wedding schedule.
+“Didn't we leave it in the car?”
 
-Then the truth returned.
+Emily stared at him.
 
-She pressed both hands to her face.
+He stared back.
 
-Sarah came in and sat beside her without speaking. Emily leaned into her, and the grief that had been waiting beneath the shock came through in a sound she did not recognize as her own.
+Then they both laughed.
 
-The funeral was held three days later.
+The suitcase was in the car, exactly where they had left it the night before. Their wedding clothes were folded carefully in garment bags, the flowers had been delivered to the hotel, and the morning light was moving slowly across the room.
 
-The church was filled with people from school, university, work, and both families. Michael's classmates spoke about his patience and his ability to see practical solutions where others saw obstacles. A colleague described how he had stayed late to help a junior team member understand a difficult design problem. Ashley read a short note about her brother's terrible jokes and his habit of borrowing her things without asking.
+They had planned a quiet honeymoon by the coast. No elaborate itinerary, no packed schedule. A few days to sleep, walk, eat well, and let the wedding settle into memory.
 
-Margaret did not speak.
+At breakfast, Michael made a list of possible places to visit. Emily crossed out half of them.
 
-She sat beside David with her hands folded in her lap. Her face seemed to have lost its familiar movement. People approached to comfort her, and she nodded, but her eyes remained fixed on a point beyond them.
+“You have turned a holiday into a site inspection,” she said.
 
-Emily stood with the two families. She wore a simple black dress. The engagement ring remained on her finger.
+“I like knowing where we're going.”
 
-When it was her turn to place a flower beside the photograph, she could not move.
+“I like finding out.”
 
-James touched her shoulder. She stepped forward and placed a white rose near the frame.
+“Those are not incompatible.”
 
-“I was supposed to marry you,” she whispered.
+“They are when you have a spreadsheet.”
 
-The words were too small for the room.
+He smiled. “I made a very small spreadsheet.”
 
-After the service, people gathered at the Reed house. Food arrived in covered dishes. Cards were placed on the table. Someone had brought the cinnamon rolls from the bakery, not knowing that the sight of them would undo Emily.
+She laughed and took his hand.
 
-She went into the kitchen and found the paper bag Margaret had brought that morning. It had been recovered from the car. One roll was crushed. The other was still wrapped.
+The coast was bright and windy. They walked along the promenade, visited a small art gallery, and spent an afternoon sitting on a beach where the tide moved around their shoes. Michael tried to build a small bridge from driftwood. Emily photographed the result before the waves carried it away.
 
-Emily held the bag.
+“Your first married engineering project,” she said.
 
-“He was bringing them to me,” she said.
+“Short-lived but structurally interesting.”
 
-Margaret stood in the doorway. For a moment, she looked at Emily as if she wanted to answer. Then her face crumpled. She crossed the room and held her.
+They ate dinner at a restaurant overlooking the water. Michael had arranged a small cake with two candles. Emily looked at it and laughed.
 
-Neither woman could speak.
+“Another celebration?”
 
-The days that followed did not arrange themselves into a clear sequence. There were calls to return, documents to sign, belongings to collect, and messages from people who did not know what to say. Emily went back to work once, then left after twenty minutes because the sound of a printer made her think of the hospital monitor.
+“I'm establishing a tradition.”
 
-She stopped writing.
+“Of cake?”
 
-The notebook Michael had given her remained on the desk. The wooden photograph box sat unopened on the shelf. His last message stayed pinned at the top of her phone.
+“Of remembering.”
 
-At night, she replayed ordinary moments: his hands around a coffee cup, the way he read her drafts, the sound of his laugh when she made fun of his umbrella. She remembered the future they had discussed and felt the absence of each detail as if it had been removed from a room.
+She reached across the table. “I like that tradition.”
 
-Margaret changed more visibly.
+Later, in the quiet of their room, they exchanged small gifts. Emily gave him a photograph from their wedding day: the moment just before he kissed her, when both of them were smiling. Michael gave her a letter he had written during the week before the ceremony.
 
-The woman who had once filled every family gathering with laughter became almost silent. She stopped telling stories. She no longer corrected Elizabeth's recipes or argued with Ashley about the television. She sat by the window for long stretches, sometimes holding Michael's old photograph, sometimes looking at nothing.
+She opened it slowly.
 
-David tried to bring her outside. Ashley tried to persuade her to visit friends. Elizabeth came over with food. Margaret thanked them, but the words seemed to cost her more than she had.
+He wrote about the years they had spent growing together, the things he admired in her, and the ways he hoped to support her work. He wrote that he did not expect marriage to make them complete, because they had already been whole people when they met. He wanted it to make their lives more connected.
 
-Emily visited often. At first she came because she could not bear to leave Margaret alone. Later she realized that Margaret's grief and her own had become connected by the same missing person.
+Emily read the letter twice.
 
-One afternoon, Emily found Margaret sitting in Michael's room. His notebooks were stacked on the desk. A jacket hung behind the door. The room had been left almost exactly as he had last used it.
+“You wrote this before the wedding?”
 
-Margaret was holding a small sketch of a bridge.
+“Yes.”
 
-“He was going to show me this,” she said.
+“You kept it secret?”
 
-Emily sat beside her.
+“I managed.”
 
-“He talked about it all the time,” Margaret continued. “I didn't understand the measurements, but I liked listening.”
+She folded it carefully and placed it in the drawer beside the bed.
 
-Emily took her hand.
+Then she took his face in her hands.
 
-They sat together without trying to repair the silence.
+“Thank you,” she said.
 
-Outside, a neighbour's child laughed in the garden. Margaret closed her eyes.
+“For what?”
 
-The sound passed through the room, and for the first time Emily understood that grief was not only the pain of remembering someone. It was also the shock of discovering that the world could continue making ordinary sounds after the person you loved had disappeared.
+“For seeing me as a person, not just as someone you love.”
 
-The morning after the wedding never came.
+He looked at her. “You are both.”
 
-But the days after the loss kept arriving, asking them to live through each one.
+She kissed him.
 
-# Chapter 32: The Things That Remain
+The next days passed in a quiet rhythm. They woke late, walked by the water, tried local food, and argued about whether a particular lighthouse was worth the climb. Emily took photographs. Michael sketched the harbour and made notes about the old stone walls.
 
-The first month after Michael's death was measured in objects.
+On their final evening, they sat outside beneath a pale sky. The water had turned dark, and the first lights appeared along the coast.
 
-His coat remained behind the apartment door. His notebook lay open beside the sofa. A mug with a small chip near the handle stood in the kitchen cupboard. The wooden photograph box sat on the bookshelf, still closed.
+“Do you feel different?” Emily asked.
 
-Emily could not decide what to do with any of it.
+Michael considered it. “A little.”
 
-She and Elizabeth visited the apartment one afternoon to collect a few things. The rooms felt wrong without Michael. His work shoes were beside the desk. A half-finished drawing was clipped to a board. A shopping list was pinned to the refrigerator in his handwriting.
+“How?”
 
-Emily read it.
+“I feel like I have a new responsibility. Not a burden. Something I want to take care of.”
 
-Milk. Bread. Coffee. Basil.
+She nodded. “I feel more settled. And also like we have a lot to learn.”
 
-She laughed once, unexpectedly, then began to cry.
+“We do.”
 
-Elizabeth held her while the list remained in her hand.
+She rested her head against his shoulder. “I don't want us to stop dating just because we're married.”
 
-“We don't have to decide today,” her mother said.
+He laughed. “I was planning to keep asking you out.”
 
-Emily nodded.
+“Good. I expect effort.”
 
-At the Reed house, Margaret had stopped entering Michael's room. David left the door open, hoping that a little air and light might help. Ashley sometimes went in to collect a book or a shirt, then stood in the doorway for several minutes before leaving.
+“Dinner next Thursday?”
 
-The family tried to maintain small routines. David cooked breakfast. Ashley visited after work. Elizabeth and Margaret's old recipe notebook stayed on the kitchen table, but neither woman had the energy to add to it.
+“Only if you book the table.”
 
-One afternoon, Elizabeth arrived with a pot of soup. She found Margaret sitting at the dining table, looking at the place where Michael used to sit.
+“Demanding.”
 
-“Come and eat with us,” Elizabeth said.
+“Your wife has standards.”
 
-Margaret shook her head.
+He kissed her hair.
 
-“Just a little.”
+When they returned home, the apartment greeted them with unopened mail, a plant that had survived without attention, and the two plates they had bought on moving day. Their wedding flowers had begun to dry, but Emily placed one small stem in a glass.
 
-“I am not hungry.”
+The ordinary world had waited for them.
 
-Elizabeth placed the bowl in front of her anyway. She did not insist. She sat down and began talking about a neighbour's garden, a parcel that had been delivered to the wrong house, and a book she had started reading.
+They unpacked, washed clothes, answered messages, and began preparing for work again. Nothing about the apartment had changed, yet it felt different because they were returning to it together.
 
-Margaret listened without responding.
+That night, Emily placed the wedding photograph beside the school picture on the bookshelf.
 
-After a while, she took a spoonful of soup.
+Michael stood behind her.
 
-It was not a breakthrough. It was simply one spoonful.
+“Two beginnings,” he said.
 
-Emily began returning to her writing in small pieces. At first she could manage only a paragraph. She wrote about objects and the stories attached to them. She wrote about the chipped mug, the basil plant, and the notebook that held Michael's bridge sketches.
+“And one long story.”
 
-She did not write about the accident. Not yet.
+He wrapped his arms around her.
 
-Sarah visited with groceries and sat beside her while she worked. Sophia brought flowers. Olivia sent a list of grief-support resources and reminded Emily that seeking help was not a sign of weakness. Madison arranged a meal rota with friends from the community arts group, making sure the families did not have to manage every practical task alone.
+“Let's keep writing it.”
 
-The women who had once gathered to plan a wedding now gathered to help one another survive its absence.
+She leaned back against him. “Every day.”
 
-Emily was grateful, but she also felt the pressure of other people's expectations. Some wanted her to be strong. Others wanted her to move on. A few spoke as if the engagement ring should be removed, as if taking it off would make the loss easier to understand.
 
-She kept it on.
+---
 
-One evening, Margaret called her.
+# Chapter 32: The Life Between Celebrations
 
-“Could you come over?” she asked.
+Married life did not begin with a grand transformation.
 
-Emily arrived to find Margaret in the living room, holding Michael's old phone.
+It began with a disagreement about laundry.
 
-“I found this,” Margaret said. “I don't know what to do with it.”
+Michael believed that towels should be folded in a precise rectangle. Emily believed that towels should be folded in a way that allowed them to fit into the cupboard. Both positions were defensible. Neither was worth a serious argument, though they managed to have one anyway.
 
-Emily sat beside her.
+“You're folding them incorrectly,” Michael said.
 
-“There are photographs,” Margaret continued. “Messages. Recordings. I can hear his voice, but I don't know whether I should.”
+“I'm folding them efficiently.”
 
-“You don't have to decide now.”
+“They won't stack.”
 
-Margaret looked at the phone. “I am afraid I'll forget.”
+“They will if you stop rearranging them.”
 
-Emily felt the sentence settle heavily between them.
+He held up a towel. “Look at this.”
 
-“You won't forget him.”
+“It is a towel, Michael.”
 
-“I know his face. I know his voice. But I am frightened of forgetting the little things. The way he said my name when he wanted something. The ridiculous songs he made up. The way he laughed before he finished telling a joke.”
+“It has a shape.”
 
-Emily took her hand.
+“So does a cloud. You don't try to organize clouds.”
 
-“Maybe we can keep those things safe.”
+He stared at her, then began laughing.
 
-Margaret looked at her. “How?”
+The laughter ended the argument. They folded the remaining towels together, badly by Michael's standards and perfectly well by Emily's.
 
-Emily did not have an answer yet.
+Their days settled into a routine. Emily worked at the publishing house, where she edited submissions, prepared manuscripts, and learned how much patience it took to help a writer make a sentence clearer without taking away its voice. She continued writing in the evenings, slowly building a collection of essays.
 
-She thought of the wooden box, the photographs, the voice messages, the notebooks. She thought of how Michael had carefully collected moments and how he had once said that a photograph could remind someone of a person without containing the person.
+Michael worked with a design consultancy. His projects involved pedestrian routes, public transport access, and small improvements to neighbourhood spaces. He sometimes came home excited about a design decision and sometimes frustrated by budgets or delays.
 
-That distinction mattered.
+They learned not to demand that every evening be productive. Some nights they cooked. Some nights they ordered food and watched an old film. Once a week they tried to have dinner without their phones.
 
-“I don't know exactly,” Emily said. “But I think we can make an archive. A place for the things he left us. His words, his photographs, the stories people remember.”
+They also learned that shared life required practical attention. Bills had to be paid. Groceries had to be bought. The bathroom tap began leaking. Emily's laptop needed repair. Michael's project deadline collided with a family birthday.
 
-Margaret looked down at the phone.
+They did not always handle these things gracefully.
 
-“Would I be able to hear him?”
+One Thursday, Emily returned home exhausted after a difficult editorial meeting. Michael was still working at the kitchen table, surrounded by drawings.
 
-“If we have recordings, yes. We could organize them so you can find them when you want.”
+“Did you get dinner?” she asked.
 
-“Could it answer me?”
+“I thought you were bringing something.”
 
-Emily hesitated. “Not in the way Michael could. We might be able to build something that helps you search his recorded words and memories. But it would need to be honest about what it is.”
+“I thought you were cooking.”
 
-Margaret nodded slowly.
+He looked up. “I have been working since six.”
 
-“I don't want a stranger pretending to be my son.”
+“So have I.”
 
-“Neither do I.”
+The silence that followed was not dramatic, but it was uncomfortable.
 
-For the first time in weeks, Margaret looked directly at her.
+Michael closed his laptop. “You're right. I should have checked.”
 
-“Then perhaps we should begin with what is true.”
+Emily put her bag down. “I should have told you I was having a difficult day.”
 
-Emily squeezed her hand.
+They stood in the kitchen, both tired, neither interested in winning.
 
-That night, she opened the wooden photograph box. Inside were the pictures Michael had selected, the anniversary card, and the small note he had written about ordinary days.
+“Take a shower,” he said. “I'll order something.”
 
-She added the recovered paper bag from the bakery, folded carefully, and a copy of his final message.
+“You don't have to do everything.”
 
-The things that remained were not enough.
+“I know. But I can do dinner.”
 
-They were also not nothing.
+She touched his arm. “Thank you.”
+
+They ate on the sofa and talked about the meeting. Michael listened without trying to solve the problem. Emily asked about his project and listened as he explained why a proposed shortcut would create a safety issue.
+
+They were learning that care sometimes meant action and sometimes meant attention.
+
+On weekends, they made time for family. Margaret and Elizabeth continued their recipe notebook, now with contributions from Emily and Ashley. David and James began attending a local history group together. Sarah visited often, bringing stories from her work and a tendency to leave books behind. Sophia and Olivia became regular guests, sometimes joined by Madison, who had begun coordinating events for a community arts organization.
+
+The group was changing, but the friendships were becoming more substantial. Sophia and Madison collaborated on a charity fashion evening. Olivia helped write the event programme. Sarah arranged publicity. Emily photographed the evening, and Michael helped with the layout of the temporary exhibition space.
+
+The event raised money for a local youth arts programme.
+
+Afterward, the women gathered around a table covered with leftover flowers and printed photographs.
+
+“We did that,” Sophia said.
+
+“We did,” Madison replied.
+
+Emily looked at the group. “We should do it again.”
+
+“Only if we have better lighting,” Olivia said.
+
+“And a larger storage room,” Sarah added.
+
+Michael appeared with a tray of drinks. “I heard someone say larger storage room. I have a proposal.”
+
+“No engineering proposals tonight,” Ashley said.
+
+He set down the tray. “Understood.”
+
+The room filled with laughter.
+
+That night, Emily and Michael walked home together. The streets were quiet, and the air smelled of rain.
+
+“I like our life,” Emily said.
+
+“Even the laundry?”
+
+“Especially the laundry. It gives us something to argue about.”
+
+He smiled. “I like it too.”
+
+She took his hand. “I don't want to wait for celebrations to feel happy.”
+
+“We don't have to.”
+
+They passed a small shop with a warm light in the window. Michael stopped to look at a display of notebooks.
+
+“Do you need another one?” Emily asked.
+
+“No.”
+
+“Then why are you looking?”
+
+“Because they are well made.”
+
+She laughed. “You are impossible.”
+
+He bought one anyway.
+
+At home, he placed it on her desk.
+
+“For your essays,” he said.
+
+Emily opened it. The first page was blank except for a sentence in his handwriting:
+
+*For all the ordinary days worth remembering.*
+
+She looked up at him.
+
+“That's a good sentence.”
+
+“I have been practicing.”
+
+She kissed him, then set the notebook beside her manuscript.
+
+Their life was not made of constant romance. It was made of work, fatigue, apologies, shared meals, small gifts, and the repeated decision to notice one another.
+
+The celebrations mattered.
+
+But the life between them was where the marriage lived.
+
+
+---
 
 # Chapter 33: A Gift Without a Reason
 
