@@ -24,7 +24,7 @@ jobs:
       - name: Install publishing toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core fonts-noto-extra
+          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex fonts-noto-core
           python -m pip install --upgrade pip
           python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
       - name: Run manuscript regression tests
