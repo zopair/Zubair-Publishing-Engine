@@ -26,3 +26,12 @@ class ManuscriptValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class KdpPrepressValidationTests(unittest.TestCase):
+    def test_pdf_trim_validator_rejects_letter_page_when_6x9_is_required(self):
+        with self.assertRaisesRegex(AssertionError, "PDF page size"):
+            builder.validate_pdf_trim(612, 792, 6, 9)
+
+    def test_pdf_trim_validator_accepts_exact_6x9_page(self):
+        builder.validate_pdf_trim(432, 648, 6, 9)
