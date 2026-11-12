@@ -67,3 +67,24 @@ class KdpPrepressValidationTests(unittest.TestCase):
         self.assertIn("وصلت رسائل القبول الجامعي", chapter19)
         self.assertIn("أربعون دقيقة", chapter19)
         self.assertNotIn("بحلول نهاية العام الجامعي الثاني", chapter19)
+
+    def test_pdf_cleanup_removes_bookmarks_links_and_embedded_files(self):
+        from pypdf import PdfReader, PdfWriter
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as tmp:
+            path = Path(tmp) / "decorated.pdf"
+            writer = PdfWriter()
+            writer.add_blank_page(width=432, height=648)
+            writer.add_outline_item("Bookmark", 0)
+            writer.add_attachment("credential.txt", b"metadata")
+            writer.add_annotation(0, {
+                "/Type": "/Annot", "/Subtype": "/Text", "/Contents": "note",
+                "/Rect": [0, 0, 10, 10]
+            })
+            with path.open("wb") as stream:
+                writer.write(stream)
+            builder.strip_pdf_print_artifacts(path)
+            reader = PdfReader(str(path))
+            self.assertEqual(len(reader.outline), 0)
+            self.assertFalse(reader.attachments)
+            self.assertTrue(all(not page.get("/Annots") for page in reader.pages))
