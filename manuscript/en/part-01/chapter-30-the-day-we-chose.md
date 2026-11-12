@@ -56,7 +56,7 @@ Margaret touched his cheek. “Drive carefully.”
 
 “I will, Mom.”
 
-He kissed her forehead, waved to David and Ashley, and stepped outside.
+He kissed her forehead, waved to David and Ashley, stepped outside, got into his car, and drove directly to the wedding venue.
 
 At the Bennett house, Emily's phone lay on the dressing table. She was listening to Sarah tell a story about their school days when it vibrated.
 
