@@ -2,7 +2,7 @@ name: Quality
 
 on:
   push:
-    branches: ["main", "feature/**", "review/**"]
+    branches: ["main", "feature/**"]
   pull_request:
     branches: ["main"]
 
