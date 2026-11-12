@@ -29,7 +29,7 @@
 
 ## 3. Metadata controls
 
-- Author spelling is fixed as **Aly HUSSEIN FEKRY** for the English edition. Verify spelling before publication because KDP warns that the primary author field cannot be changed after publication without creating a new edition in relevant cases.
+- Author spelling is fixed as **Aly HUSSEIN FEKRY** for the English edition. Verify the spelling in the Bookshelf details, title page, and cover before publication.
 - The Arabic edition's author-name display needs the author's confirmation in Arabic script before its metadata/title page is finalized. Do not invent a transliteration.
 - Cover title, title page, and KDP title metadata must match exactly.
 - Prepare a reader-facing description without spoilers, misleading claims, URLs, reviews, or promotional language.
@@ -57,8 +57,9 @@ KDP requires disclosure of AI-generated text, images, or translations. AI-assist
 - [ ] Confirm final AI-generated content disclosure for text and translation.
 - [ ] Add and approve title pages, copyright pages, and final front/back matter.
 - [ ] Approve English and Arabic descriptions, keywords, categories, and primary marketplace.
-- [ ] Export final English EPUB/DOCX and validate in Kindle Previewer.
-- [ ] Export final Arabic EPUB/DOCX with RTL metadata and validate in Kindle Previewer.
+- [ ] Export final English EPUB/DOCX and validate in Kindle Previewer and KDP Online Previewer.
+- [ ] Export the Arabic DOCX using KDP's dedicated Word/RTL instructions and validate the converted result in KDP Online Previewer.
+- [ ] If an Arabic EPUB is chosen, validate it independently in Kindle Previewer and KDP Online Previewer before upload.
 - [ ] Prepare English paperback interior and full-wrap cover only after trim/paper/page-count decisions.
 - [ ] Review all final KDP previews and approve before publication.
 
@@ -67,9 +68,7 @@ KDP requires disclosure of AI-generated text, images, or translations. AI-assist
 - [Arabic publishing requirements and Word formatting workflow](https://kdp.amazon.com/en_US/help/topic/GUQT4C8J6RR6V8TY)
 - [KDP supported languages and PDF language restrictions](https://kdp.amazon.com/en_US/help/topic/G200673300)
 - [KDP supported eBook manuscript formats](https://kdp.amazon.com/en_US/help/topic/G200634390)
-- [Supported book languages](https://kdp.amazon.com/en_US/help/topic/G200673300)
-- [Supported eBook manuscript formats](https://kdp.amazon.com/en_US/help/topic/G200634390)
-- [eBook manuscript formatting guide](https://kdp.amazon.com/en_US/help/topic/G200645680)
+- [Kindle Previewer](https://kdp.amazon.com/en_US/help/topic/G202131170)
 - [AI-generated and AI-assisted content policy](https://kdp.amazon.com/en_US/help/topic/G200672390)
 - [Book metadata guidelines](https://kdp.amazon.com/en_US/help/topic/G201097560)
 - [Paperback manuscript formatting](https://kdp.amazon.com/en_US/help/topic/G201834190)
