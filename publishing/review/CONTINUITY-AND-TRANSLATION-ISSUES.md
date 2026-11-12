@@ -25,7 +25,7 @@ The English source establishes the following progression:
 13. First month after Michael's death — Chapter 32.
 14. Archive creation, ethics, product conflict, and revised platform — Chapters 33–36.
 
-The corrected Arabic Chapter 19 now occupies the correct place between the university decision in Chapter 18 and the first university winter in Chapter 20. It no longer duplicates Chapter 22.
+The current Arabic Chapter 19 is materially shorter than its English source and does not preserve the complete corresponding sequence. The proposed full translation must be reviewed and approved before it replaces the current chapter. Chapter 22 remains a separate later point in the university timeline.
 
 ## 2. Additional Arabic omissions and sequencing defects
 
@@ -96,6 +96,6 @@ The Arabic version omits the downstairs scene after Emily reads Michael's last m
 
 ## 4. Approval boundary
 
-The six previously approved corrections have been applied on the review branch. The additional Chapter 12, 13, 21, and 31 items above remain **pending approval** and have not been changed.
+The six agreed review dimensions are the criteria for this audit; they are not approval to change manuscript passages. The manuscript files have been restored to the pre-review baseline on this branch. **No manuscript corrections are currently applied.** All proposed changes in this report remain pending your explicit approval.
 
 No stylistic rewriting is proposed. The recommended work is limited to restoring omitted source material, correcting an event-order error, and preserving the existing scenes and narrative voice.
