@@ -40,7 +40,10 @@ class KdpPrepressValidationTests(unittest.TestCase):
         from tempfile import TemporaryDirectory
         with TemporaryDirectory() as tmp:
             target = Path(tmp) / "arabic.docx"
-            builder.make_arabic_docx(builder.AR, target)
+            source = Path(tmp) / "arabic.md"
+            raw = builder.source_text(builder.AR)
+            source.write_text(builder.frontmatter(builder.TITLE_AR, builder.AUTHOR_AR, "ar") + builder.prepare_arabic_body(raw), encoding="utf-8")
+            builder.make_arabic_docx(source, target)
             builder.validate_arabic_docx(target)
 
     def test_arabic_chapter_13_matches_the_english_summer_program_start(self):
