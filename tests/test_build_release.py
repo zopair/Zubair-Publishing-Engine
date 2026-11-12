@@ -128,7 +128,9 @@ class EnglishEpubAndWrapRegressionTests(unittest.TestCase):
 
     def test_front_matter_source_contains_one_title_and_copyright(self):
         source = builder.frontmatter(builder.TITLE_EN, builder.AUTHOR_EN, "en") + builder.prepare_english_body(builder.source_text(builder.EN))
-        self.assertEqual(source.count(builder.TITLE_EN), 1)
+        metadata, body = source.split("---", 2)[1:]
+        self.assertEqual(metadata.count('title: "' + builder.TITLE_EN + '"'), 1)
+        self.assertEqual(body.splitlines().count("# " + builder.TITLE_EN), 1)
         self.assertEqual(source.count("Copyright © 2026 " + builder.AUTHOR_EN), 1)
 
     def test_english_epub_validator_accepts_single_front_matter_and_valid_metadata(self):
