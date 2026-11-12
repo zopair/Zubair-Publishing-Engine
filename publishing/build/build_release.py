@@ -258,6 +258,13 @@ def validate_arabic_docx(path):
     paragraphs = xml.xpath(".//w:body/w:p", namespaces=ns)
     if not paragraphs:
         raise AssertionError("Arabic DOCX contains no paragraphs")
+    document_text = "".join(xml.xpath(".//w:t/text()", namespaces=ns))
+    if document_text.count(TITLE_AR) != 1:
+        raise AssertionError("Arabic Kindle DOCX must contain exactly one title-page title")
+    if document_text.count("حقوق النشر © 2026") != 1:
+        raise AssertionError("Arabic Kindle DOCX must contain exactly one copyright notice")
+    if "المخطوطة العربية الكاملة" in document_text or "نسخة موحّدة للمراجعة" in document_text:
+        raise AssertionError("Arabic Kindle DOCX contains archive-only editorial notes")
     missing_rtl = [i for i,p in enumerate(paragraphs,1) if not p.xpath("./w:pPr/w:bidi[@w:val='1']", namespaces=ns)]
     if missing_rtl:
         raise AssertionError(f"Arabic DOCX paragraphs missing RTL direction: {missing_rtl[:10]}")
