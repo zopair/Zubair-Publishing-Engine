@@ -30,6 +30,27 @@ def source_text(path):
     text = re.split(r"^## (?:Digital Integrity Fingerprint|البصمة الرقمية لسلامة النص)\s*$", text, flags=re.M)[0]
     return text
 
+def prepare_arabic_body(text):
+    text = re.sub(
+        r"^# هدية من الغائب\\s*\\n.*?^---\\s*\\n",
+        "",
+        text,
+        count=1,
+        flags=re.M | re.S,
+    )
+    text = re.sub(
+        r"^## حقوق النشر والملكية الفكرية\\s*\\n.*?^---\\s*\\n",
+        "",
+        text,
+        count=1,
+        flags=re.M | re.S,
+    )
+    text = text.lstrip()
+    if not text.startswith("# الفصل الأول"):
+        raise AssertionError("Arabic KDP body must begin at Chapter 1 after front-matter cleanup")
+    return text
+
+
 def assert_master(text, arabic=False):
     pat = r"^# Chapter\s+\d+" if not arabic else r"^# الفصل\s+[اأإآ\d]+"
     chapters = re.findall(pat, text, flags=re.M)
@@ -284,7 +305,8 @@ def main():
          "--metadata=title:"+TITLE_EN,"--metadata=author:"+AUTHOR_EN])
     # Arabic Kindle DOCX, explicitly patched to RTL
     armd=OUT/"arabic-kindle-source.md"
-    armd.write_text(frontmatter(TITLE_AR,AUTHOR_AR,"ar")+ar,encoding="utf-8")
+    ar_body = prepare_arabic_body(ar)
+    armd.write_text(frontmatter(TITLE_AR,AUTHOR_AR,"ar")+ar_body,encoding="utf-8")
     make_arabic_docx(armd,OUT/"هدية_من_الغائب_Kindle_RTL.docx")
     arabic_docx_paragraphs = validate_arabic_docx(OUT/"هدية_من_الغائب_Kindle_RTL.docx")
     # English print interior: 6x9 in, black ink, cream paper assumption, no bleed.
@@ -308,7 +330,7 @@ def main():
     (OUT/"SHA256SUMS.txt").write_text("".join(f"{v}  {k}\n" for k,v in manifest.items()),encoding="utf-8")
     report={"english_chapters":36,"arabic_chapters":36,"english_print_pages":pages,
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
-            "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_docx_paragraphs":arabic_docx_paragraphs,
+            "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_front_matter":"single title and copyright section","arabic_docx_paragraphs":arabic_docx_paragraphs,
             "english_print_pdf":"generated","covers":"preview only; approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
