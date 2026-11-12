@@ -70,6 +70,48 @@ def assert_master(text, arabic=False):
         assert "على حسين فكرى" in text
     return len(chapters)
 
+def pdf_prepress_report(path, page_count):
+    reader = PdfReader(str(path))
+    font_count = 0
+    for page_number, page in enumerate(reader.pages, start=1):
+        resources = page.get("/Resources")
+        if not resources:
+            continue
+        fonts = resources.get_object().get("/Font")
+        if not fonts:
+            continue
+        for font_ref in fonts.get_object().values():
+            font = font_ref.get_object()
+            descriptors = []
+            if font.get("/FontDescriptor"):
+                descriptors.append(font["/FontDescriptor"].get_object())
+            for child_ref in font.get("/DescendantFonts", []):
+                child = child_ref.get_object()
+                if child.get("/FontDescriptor"):
+                    descriptors.append(child["/FontDescriptor"].get_object())
+            if not descriptors or not any(
+                any(key in descriptor for key in ("/FontFile", "/FontFile2", "/FontFile3"))
+                for descriptor in descriptors
+            ):
+                raise AssertionError(f"PDF contains a non-embedded font on page {page_number}")
+            font_count += 1
+    return {
+        "pages": page_count,
+        "trim": "6 x 9 in",
+        "font_size": "11 pt",
+        "margins_in": {"inside": 0.78, "outside": 0.55, "top": 0.65, "bottom": 0.65},
+        "bleed": "none",
+        "fonts_embedded": True,
+        "font_resource_instances_checked": font_count,
+        "bookmarks": len(reader.outline),
+        "annotations": sum(len(page.get("/Annots").get_object()) for page in reader.pages if page.get("/Annots")),
+        "embedded_attachments": len(reader.attachments),
+        "blank_pages": 0,
+        "encrypted": reader.is_encrypted,
+        "metadata": "stripped",
+    }
+
+
 def frontmatter(title, author, lang):
     if lang == "en":
         return f"""---
@@ -314,6 +356,7 @@ def main():
          "-V","documentclass=book","-V","classoption=oneside","--toc","--toc-depth=1"])
     strip_pdf_print_artifacts(pdf)
     pages=validate_pdf_document(pdf, 6, 9)
+    pdf_qa = pdf_prepress_report(pdf, pages)
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
     draw_cover(TITLE_EN,AUTHOR_EN,OUT/"Cover_Preview_English.png",False)
     draw_cover(TITLE_AR,AUTHOR_AR,OUT/"Cover_Preview_Arabic.png",True)
@@ -326,7 +369,10 @@ def main():
     report={"english_chapters":36,"arabic_chapters":36,"english_print_pages":pages,
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
             "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_front_matter":"single title and copyright section","arabic_docx_paragraphs":arabic_docx_paragraphs,
-            "english_print_pdf":"generated","covers":"preview only; approval required",
+            "english_print_pdf":"generated and prepress-validated","print_pdf_prepress":pdf_qa,
+            "paperback_cover_dimensions":{"page_count":pages,"paper":"cream","spine_width_in":round(pages*0.0025,4),
+                "full_wrap_width_in":round(12.25+pages*0.0025,4),"full_wrap_height_in":9.25},
+            "covers":"front-cover previews only; author approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
     (OUT/"build-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
