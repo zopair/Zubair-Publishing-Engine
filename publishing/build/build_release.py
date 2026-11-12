@@ -112,6 +112,9 @@ def validate_pdf_document(path, expected_width_in=6, expected_height_in=9):
             validate_pdf_trim(box.width, box.height, expected_width_in, expected_height_in)
         except AssertionError as exc:
             raise AssertionError(f"PDF page size validation failed on page {index}: {exc}") from exc
+        page_text = (page.extract_text() or "").strip()
+        if not page_text or re.fullmatch(r"(?:[0-9]+|[ivxlcdm]+)", page_text, flags=re.I):
+            raise AssertionError(f"PDF contains a blank or page-number-only page at page {index}")
     return len(reader.pages)
 
 
@@ -263,7 +266,7 @@ def main():
          "-V","geometry:inner=0.78in","-V","geometry:outer=0.55in",
          "-V","geometry:top=0.65in","-V","geometry:bottom=0.65in",
          "-V","fontsize=11pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
-         "-V","documentclass=book","--toc","--toc-depth=1"])
+         "-V","documentclass=book","-V","classoption=oneside","--toc","--toc-depth=1"])
     pages=validate_pdf_document(pdf, 6, 9)
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
     draw_cover(TITLE_EN,AUTHOR_EN,OUT/"Cover_Preview_English.png",False)
