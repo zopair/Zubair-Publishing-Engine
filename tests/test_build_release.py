@@ -131,6 +131,21 @@ class EnglishEpubAndWrapRegressionTests(unittest.TestCase):
         self.assertEqual(source.count(builder.TITLE_EN), 1)
         self.assertEqual(source.count("Copyright © 2026 " + builder.AUTHOR_EN), 1)
 
+    def test_english_epub_validator_accepts_single_front_matter_and_valid_metadata(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as tmp:
+            path = Path(tmp) / "valid.epub"
+            with __import__("zipfile").ZipFile(path, "w") as archive:
+                archive.writestr("mimetype", "application/epub+zip", compress_type=__import__("zipfile").ZIP_STORED)
+                archive.writestr("EPUB/content.xhtml",
+                    "<html><body><h1>A Gift from the One Who Left</h1>"
+                    "<p>Copyright © 2026 Aly HUSSEIN FEKRY</p></body></html>")
+                archive.writestr("EPUB/package.opf",
+                    "<package><metadata><dc:language>en</dc:language></metadata></package>")
+            result = builder.validate_english_epub(path)
+            self.assertEqual(result["visible_title_count"], 1)
+            self.assertEqual(result["copyright_count"], 1)
+
     def test_279_print_pages_produce_exact_280_page_cover_geometry(self):
         self.assertEqual(builder.kdp_rounded_page_count(279), 280)
         self.assertEqual(round(12.25 + 280 * 0.0025, 3), 12.950)
