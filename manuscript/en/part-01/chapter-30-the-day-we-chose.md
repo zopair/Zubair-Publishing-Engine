@@ -46,7 +46,7 @@ He took the bag and looked inside. The rolls were wrapped carefully, still warm.
 
 “I will.”
 
-He checked the ring box one more time, then placed it in his inside pocket. His car was parked outside. David offered to drive, but Michael said he wanted to collect one last thing from the apartment before heading to the venue. It would take only a few minutes, and he wanted to bring the small wooden photograph box Emily had made years earlier. He thought they could place it on the table beside the guest book.
+He checked the ring box one more time, then placed it in his inside pocket. His car was parked outside. David offered to drive, but Michael said he had already collected one last thing from the apartment earlier that morning: the small wooden photograph box Emily had made years earlier. It was safely in the car, ready to be placed on the table beside the guest book at the venue.
 
 “Don't be late,” Ashley warned.
 
@@ -82,7 +82,7 @@ Emily looked down at the ring on her finger. It was the engagement ring Michael 
 
 “I will,” she said.
 
-At 11:17, Michael's car approached an intersection a few miles from the apartment. A delivery van entered the junction against the light. There was no time for a full stop, no clean way to avoid the impact. The sound was sudden and violent. The paper bag slid from the passenger seat. The small wooden photograph box struck the floor.
+At 11:17, while Michael was on his way to the wedding venue, his car approached an intersection a few miles from the venue. A delivery van entered the junction against the light. There was no time for a full stop, no clean way to avoid the impact. The sound was sudden and violent. The paper bag slid from the passenger seat. The small wooden photograph box struck the floor.
 
 A driver behind him called emergency services.
 
