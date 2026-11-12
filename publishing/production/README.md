@@ -79,6 +79,10 @@ See [MANUSCRIPT-MAP.md](./MANUSCRIPT-MAP.md) for the production map and bilingua
 - Final descriptions, categories, keywords, price, primary marketplace, territories, and KDP Select choice.
 - Final AI-content disclosure confirmation.
 
+## Intellectual property and integrity
+
+See [INTELLECTUAL-PROPERTY-AND-INTEGRITY.md](./INTELLECTUAL-PROPERTY-AND-INTEGRITY.md) for the inserted copyright notices, SHA-256 source fingerprints, evidence-preservation controls, Egypt deposit route, and KDP rights/AI-disclosure checklist.
+
 ## Official KDP references
 
 - [Arabic publishing and Word formatting](https://kdp.amazon.com/en_US/help/topic/GUQT4C8J6RR6V8TY)
