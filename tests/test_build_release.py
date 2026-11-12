@@ -109,3 +109,7 @@ class KdpPrepressValidationTests(unittest.TestCase):
         self.assertIn("on his way to the wedding venue", en_chapter30)
         self.assertIn("متجهًا مباشرة إلى مكان حفل الزفاف", ar_chapter30)
         self.assertIn("في طريقه إلى حفل الزفاف", ar_chapter30)
+
+    def test_kdp_cover_page_count_rounds_odd_interiors_up(self):
+        self.assertEqual(builder.kdp_rounded_page_count(279), 280)
+        self.assertEqual(builder.kdp_rounded_page_count(280), 280)
