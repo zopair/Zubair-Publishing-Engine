@@ -2,6 +2,7 @@
 ## A Gift from the One Who Left / هدية من الغائب
 
 **Author (English):** Aly HUSSEIN FEKRY  
+**Author (Arabic):** على حسين فكرى  
 **English edition:** Kindle eBook + Paperback  
 **Arabic edition:** Kindle eBook  
 **Canonical story premise:** Michael dies in a car accident while driving to the wedding venue. The wedding never takes place. Michael and Emily do not marry; there is no honeymoon.
@@ -72,16 +73,20 @@ See [MANUSCRIPT-MAP.md](./MANUSCRIPT-MAP.md) for the production map and bilingua
 - English paperback and Kindle; Arabic Kindle eBook.
 
 ### Pending before final files
-- Arabic-script author name (must be supplied/confirmed by the author).
+- Arabic-script author name: **على حسين فكرى** (confirmed).
 - Final trim size and paper type for the English paperback.
 - Final page count after formatting; required for spine width.
 - Cover direction approval and final cover artwork.
 - Final descriptions, categories, keywords, price, primary marketplace, territories, and KDP Select choice.
 - Final AI-content disclosure confirmation.
 
+## Final author review
+
+See [FINAL-AUTHOR-REVIEW.md](./FINAL-AUTHOR-REVIEW.md) for the consolidated review snapshot, verified story/structure checks, production deliverable status, remaining author decisions, and release sequence.
+
 ## Intellectual property and integrity
 
-See [INTELLECTUAL-PROPERTY-AND-INTEGRITY.md](./INTELLECTUAL-PROPERTY-AND-INTEGRITY.md) for the inserted copyright notices, SHA-256 source fingerprints, evidence-preservation controls, Egypt deposit route, and KDP rights/AI-disclosure checklist.
+See [INTELLECTUAL-PROPERTY-AND-INTEGRITY.md](./INTELLECTUAL-PROPERTY-AND-INTEGRITY.md) for the inserted copyright notices, SHA-256 source fingerprints, evidence-preservation controls, GitHub evidence-archive approach, and KDP rights/AI-disclosure checklist.
 
 ## Official KDP references
 

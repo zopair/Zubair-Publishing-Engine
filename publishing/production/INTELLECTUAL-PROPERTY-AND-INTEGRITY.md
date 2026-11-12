@@ -2,7 +2,8 @@
 ## A Gift from the One Who Left / هدية من الغائب
 
 **Record date:** 2026-11-12  
-**Author display name supplied for English edition:** Aly HUSSEIN FEKRY  
+**Author display name — English:** Aly HUSSEIN FEKRY  
+**Author display name — Arabic:** على حسين فكرى  
 **Canonical source branch:** `production/ip-protection-and-digital-fingerprints`
 
 ## 1. Copyright notice inserted into both consolidated manuscripts
@@ -19,7 +20,7 @@ Algorithm: SHA-256 over UTF-8 bytes. The digest covers the exact consolidated ma
 | Edition | SHA-256 digest |
 |---|---|
 | English source manuscript | `1c986b67e482d22cf20588f58ab8ef1a5e9f31f23a9194ed69216fdcccbbd3e5` |
-| Arabic source manuscript | `3188b7bb4639b6f52e6a20efe332b6d4eab5b2bfff60df1c8d07d8cf7306720e` |
+| Arabic source manuscript | `d640b8c4cea88b05b1e7a7f490bc0ac09a8fca5ea4bbe640c955460c40b3f5e7` |
 
 These are source-text fingerprints, not the hashes of the final EPUB, DOCX, PDF, or cover files. Generate and append a separate release manifest with hashes for every final distribution artifact after formatting/export. Never reuse these source digests as final-file hashes.
 
@@ -48,19 +49,17 @@ Recommended operational controls:
 - Do not overwrite released artifacts; issue a new version and new hashes for every substantive update.
 - Keep private working drafts and proof documents access-controlled. Public repository history is useful evidence but should not be the only evidence archive.
 
-## 5. Egypt: official deposit and rights route
+## 5. Chosen evidence approach: GitHub repository only
 
-Copyright protection is generally automatic for eligible original works under the Berne framework; voluntary registration/deposit can provide useful evidence but does not replace proof of authorship or ownership.
+**Author's decision:** No deposit or registration application will be pursued in Egypt for this release. The selected evidence archive is the project's GitHub repository.
 
-For publication in Egypt, verify the current process directly with the National Library and Archives of Egypt (Dar al-Kotob) before filing. Its official book-deposit service publishes the required documents, online submission steps, and post-issuance deposit obligations. Requirements differ depending on whether the applicant is an author-publisher, publisher, or printer, and whether the edition is print or electronic.
+Repository evidence to preserve:
+- The exact bilingual source manuscripts and their SHA-256 fingerprints.
+- Git commit history and pull-request review records for manuscript and production changes.
+- The final approved release tag/commit and a release-specific SHA-256 manifest for each exported EPUB, DOCX, PDF, and cover file.
+- Author approvals, dated drafts, editorial decisions, source artwork, and third-party licences/permissions where applicable.
 
-Official starting points:
-- Dar al-Kotob book deposit service: https://www.darelkotob.gov.eg/ar-eg/Pages/PeriodicalPrintingService.aspx
-- Required documents for deposit: https://www.darelkotob.gov.eg/ar-eg/Documents/%D8%A7%D9%84%D8%A7%D9%8A%D8%AF%D8%A7%D8%B9/%D8%A7%D9%84%D8%A7%D9%88%D8%B1%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D8%A9%20%D9%84%D9%84%D9%86%D8%A7%D8%B4%D8%B1%D9%8A%D9%86.pdf
-- Official submission steps: https://www.darelkotob.gov.eg/ar-eg/Documents/%D8%A7%D9%84%D8%A7%D9%8A%D8%AF%D8%A7%D8%B9/%D8%B7%D8%B1%D9%82%20%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85.pdf
-- Egyptian Authority for Intellectual Property information: https://sis.gov.eg/en/egypt/culture/cultural-institutions/egyptian-authority-for-intellectual-property/
-
-**Status:** No government registration, deposit number, ISBN, notarized certificate, or official filing has been obtained by this repository change. Those require a formal application and the relevant authority's acceptance.
+**Important limitation:** GitHub history and SHA-256 fingerprints provide version and integrity evidence. They are not a government registration, official timestamp certificate, notarized record, or conclusive legal determination of authorship/ownership. Keep independent backups of the exact release package. No Egyptian deposit, registration number, ISBN, or government filing is claimed.
 
 ## 6. KDP rights and AI disclosure
 
@@ -76,11 +75,9 @@ Official KDP references:
 
 ## 7. Outstanding actions before publication
 
-- [ ] Confirm the Arabic-script author name before final Arabic cover/title metadata.
-- [ ] Review and approve both inserted copyright notices.
+- [x] Arabic-script author display confirmed: **على حسين فكرى**.
+- [ ] Review and approve both inserted copyright notices and the Arabic author attribution.
 - [ ] Confirm the rights-holder identity and chain of title; sign any required declarations.
-- [ ] Verify the exact current Egyptian deposit requirements and submit the relevant application.
-- [ ] Obtain and archive any official deposit/registration documents.
 - [ ] After final formatting, calculate SHA-256 for each final EPUB/DOCX/PDF/cover file and create a release-specific manifest.
 - [ ] Complete KDP AI-generated content disclosure at upload.
 - [ ] Obtain explicit author approval before publishing or licensing the work.
