@@ -3,7 +3,7 @@ const SUPPORTED_LANGUAGES = new Set(["en", "ar"]);
 export function createProject(input = {}) {
   const title = String(input.title ?? "").trim();
   return {
-    id: globalThis.crypto?.randomUUID?.() ?? `project-${Date.now().toString(36)}`,
+    id: String(input.id ?? globalThis.crypto?.randomUUID?.() ?? `project-${Date.now().toString(36)}`),
     title,
     language: SUPPORTED_LANGUAGES.has(input.language) ? input.language : "en",
     author: String(input.author ?? "").trim(),
