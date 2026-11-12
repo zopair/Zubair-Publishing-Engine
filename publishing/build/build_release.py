@@ -3,7 +3,7 @@
 from pathlib import Path
 import re, hashlib, json, subprocess, sys, zipfile, tempfile
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-from pypdf import PdfReader
+from pypdf import PdfReader, PdfWriter
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
@@ -102,11 +102,39 @@ def validate_pdf_trim(width_pt, height_pt, expected_width_in, expected_height_in
         )
 
 
+def strip_pdf_print_artifacts(path):
+    reader = PdfReader(str(path))
+    writer = PdfWriter()
+    writer.clone_document_from_reader(reader)
+    root = writer._root_object
+    for key in ("/Outlines", "/Names", "/AF", "/OpenAction", "/PageMode", "/Metadata", "/AcroForm"):
+        root.pop(key, None)
+    for page in writer.pages:
+        page.pop("/Annots", None)
+    try:
+        writer._info.get_object().clear()
+    except Exception:
+        pass
+    cleaned = Path(str(path) + ".clean")
+    with cleaned.open("wb") as stream:
+        writer.write(stream)
+    cleaned.replace(path)
+
+
 def validate_pdf_document(path, expected_width_in=6, expected_height_in=9):
     reader = PdfReader(str(path))
     if not reader.pages:
         raise AssertionError("PDF contains no pages")
+    if reader.outline:
+        raise AssertionError("PDF contains bookmarks/outlines")
+    if reader.attachments:
+        raise AssertionError("PDF contains embedded attachments")
+    root = reader.trailer["/Root"].get_object()
+    if root.get("/Names") or root.get("/AF") or root.get("/Metadata"):
+        raise AssertionError("PDF contains named destinations, associated files, or XMP metadata")
     for index, page in enumerate(reader.pages, start=1):
+        if page.get("/Annots"):
+            raise AssertionError(f"PDF contains annotations on page {index}")
         box = page.mediabox
         try:
             validate_pdf_trim(box.width, box.height, expected_width_in, expected_height_in)
@@ -267,6 +295,7 @@ def main():
          "-V","geometry:top=0.65in","-V","geometry:bottom=0.65in",
          "-V","fontsize=11pt","-V","mainfont=Noto Serif","-V","linestretch=1.12",
          "-V","documentclass=book","-V","classoption=oneside","--toc","--toc-depth=1"])
+    strip_pdf_print_artifacts(pdf)
     pages=validate_pdf_document(pdf, 6, 9)
     # Bilingual cover concepts: preview artwork only, awaiting author approval.
     draw_cover(TITLE_EN,AUTHOR_EN,OUT/"Cover_Preview_English.png",False)
