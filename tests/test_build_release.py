@@ -140,8 +140,11 @@ class EnglishEpubAndWrapRegressionTests(unittest.TestCase):
             with __import__("zipfile").ZipFile(path, "w") as archive:
                 archive.writestr("mimetype", "application/epub+zip", compress_type=__import__("zipfile").ZIP_STORED)
                 archive.writestr("EPUB/content.xhtml",
-                    "<html><body><h1>A Gift from the One Who Left</h1>"
+                    "<html><head><title>A Gift from the One Who Left</title></head>"
+                    "<body><h1>A Gift from the One Who Left</h1>"
                     "<p>Copyright © 2026 Aly HUSSEIN FEKRY</p></body></html>")
+                archive.writestr("EPUB/nav.xhtml",
+                    "<html><body><nav><a>A Gift from the One Who Left</a></nav></body></html>")
                 archive.writestr("EPUB/package.opf",
                     "<package><metadata><dc:language>en</dc:language></metadata></package>")
             result = builder.validate_english_epub(path)
