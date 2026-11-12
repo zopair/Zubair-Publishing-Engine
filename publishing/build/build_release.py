@@ -31,24 +31,19 @@ def source_text(path):
     return text
 
 def prepare_arabic_body(text):
-    text = re.sub(
-        r"^# هدية من الغائب\s*\n.*?^---\s*\n",
-        "",
-        text,
-        count=1,
-        flags=re.M | re.S,
-    )
-    text = re.sub(
-        r"^## حقوق النشر والملكية الفكرية\s*\n.*?^---\s*\n",
-        "",
-        text,
-        count=1,
-        flags=re.M | re.S,
-    )
-    text = text.lstrip()
-    if not text.startswith("# الفصل الأول"):
-        raise AssertionError("Arabic KDP body must begin at Chapter 1 after front-matter cleanup")
-    return text
+    # The archive master includes its own review title and copyright block.
+    # The KDP builder supplies a clean, single front-matter section, so retain
+    # only the story body beginning with Chapter 1.
+    marker = "# الفصل الأول"
+    start = text.find(marker)
+    if start < 0:
+        raise AssertionError("Arabic KDP body must contain Chapter 1")
+    body = text[start:].lstrip()
+    if "المخطوطة العربية الكاملة" in body or "نسخة موحّدة للمراجعة" in body:
+        raise AssertionError("Arabic KDP body contains archive-only editorial front matter")
+    if "حقوق النشر © 2026" in body:
+        raise AssertionError("Arabic KDP body contains a duplicate copyright section")
+    return body
 
 
 def assert_master(text, arabic=False):
