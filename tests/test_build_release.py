@@ -88,3 +88,11 @@ class KdpPrepressValidationTests(unittest.TestCase):
             self.assertEqual(len(reader.outline), 0)
             self.assertFalse(reader.attachments)
             self.assertTrue(all(not page.get("/Annots") for page in reader.pages))
+
+    def test_arabic_kindle_source_has_one_front_matter_block(self):
+        raw = builder.source_text(builder.AR)
+        body = builder.prepare_arabic_body(raw)
+        self.assertTrue(body.startswith("# الفصل الأول"))
+        self.assertNotIn("المخطوطة العربية الكاملة", body)
+        self.assertNotIn("نسخة موحّدة للمراجعة", body)
+        self.assertNotIn("حقوق النشر © 2026", body)
