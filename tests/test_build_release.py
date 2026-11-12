@@ -48,3 +48,14 @@ class KdpPrepressValidationTests(unittest.TestCase):
         chapter13 = text.split("# الفصل الثالث عشر", 1)[1].split("# الفصل الرابع عشر", 1)[0]
         self.assertIn("بدأ الأسبوع الأول من البرنامج الصيفي", chapter13)
         self.assertNotIn("بحلول نهاية الصيف", chapter13)
+
+    def test_pdf_validator_rejects_pages_containing_only_a_page_number(self):
+        from reportlab.pdfgen import canvas
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as tmp:
+            path = Path(tmp) / "blank-page.pdf"
+            c = canvas.Canvas(str(path), pagesize=(432, 648))
+            c.drawString(200, 30, "12")
+            c.showPage(); c.save()
+            with self.assertRaisesRegex(AssertionError, "blank or page-number-only"):
+                builder.validate_pdf_document(path, 6, 9)
