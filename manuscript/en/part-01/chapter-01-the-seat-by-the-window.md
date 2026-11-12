@@ -116,7 +116,7 @@ His family was louder.
 
 Not in an unpleasant way. Their house simply never seemed to run out of conversation.
 
-His mother, Ashley Reed, had a laugh that could fill an entire room. She was known among her friends for turning minor inconveniences into dramatic performances.
+His mother, Mrs. Reed, had a laugh that could fill an entire room. She was known among her friends for turning minor inconveniences into dramatic performances.
 
 His father, David, was calmer, with a dry sense of humor that often appeared when everyone else had run out of things to say.
 
