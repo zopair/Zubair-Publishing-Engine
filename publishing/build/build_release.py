@@ -32,7 +32,7 @@ def source_text(path):
 
 def prepare_english_body(text):
     # Remove archive-only title and copyright pages; the KDP builder adds one clean front matter.
-    match = re.search(r"^# Chapter 1\\b", text, flags=re.M)
+    match = re.search(r"^# Chapter 1\b", text, flags=re.M)
     if not match:
         raise AssertionError("English KDP body must contain Chapter 1")
     body = text[match.start():].lstrip()
@@ -133,19 +133,19 @@ def validate_english_epub(path):
         names = archive.namelist()
         if not names or names[0] != "mimetype":
             raise AssertionError("EPUB mimetype must be the first ZIP member")
-        xhtml = "\\n".join(archive.read(name).decode("utf-8", errors="replace")
+        xhtml = "\n".join(archive.read(name).decode("utf-8", errors="replace")
                             for name in names if name.lower().endswith((".xhtml", ".html", ".htm")))
-        opf = "\\n".join(archive.read(name).decode("utf-8", errors="replace")
+        opf = "\n".join(archive.read(name).decode("utf-8", errors="replace")
                           for name in names if name.lower().endswith(".opf"))
     visible = re.sub(r"<[^>]+>", " ", xhtml)
-    visible = re.sub(r"\\s+", " ", visible)
+    visible = re.sub(r"\s+", " ", visible)
     if visible.count(TITLE_EN) != 1:
         raise AssertionError("English EPUB must contain exactly one visible title")
     if visible.count("Copyright © 2026 " + AUTHOR_EN) != 1:
         raise AssertionError("English EPUB must contain exactly one copyright notice")
     if "Complete English Manuscript" in visible:
         raise AssertionError("English EPUB contains archive-only editorial front matter")
-    if not re.search(r"<dc:language>\\s*en\\s*</dc:language>", opf, flags=re.I):
+    if not re.search(r"<dc:language>\s*en\s*</dc:language>", opf, flags=re.I):
         raise AssertionError("English EPUB language metadata must be en")
     return {"zip_integrity":"passed","visible_title_count":1,"copyright_count":1,
             "archive_front_matter":False,"language":"en"}
@@ -410,9 +410,9 @@ def create_full_wrap(front_path, output_path, interior_pages):
     d.rectangle((bleed,bleed,bleed+trim,bleed+2700),fill=(35,39,53))
     title=ImageFont.truetype(FONT_BOLD,54); body=ImageFont.truetype(FONT,32)
     d.text((bleed+140,bleed+260),TITLE_EN,font=title,fill=(248,236,214))
-    copy=("Emily Bennett and Michael Reed grew up together, found their way back to each other, and began planning a future. But Michael never reaches the wedding.\\n\\nA contemporary story of first love, family, grief, memory, and the fragile work of beginning again.")
+    copy=("Emily Bennett and Michael Reed grew up together, found their way back to each other, and began planning a future. But Michael never reaches the wedding.\n\nA contemporary story of first love, family, grief, memory, and the fragile work of beginning again.")
     y=bleed+390
-    for para in copy.split("\\n"):
+    for para in copy.split("\n"):
         d.text((bleed+140,y),para,font=body,fill=(235,229,216)); y+=100
     # Blank 2 x 1.2 inch barcode reserve at lower-right of the back cover.
     bw,bh=600,360; bx=bleed+trim-bw-60; by=bleed+2700-bh-60
