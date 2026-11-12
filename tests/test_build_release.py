@@ -99,3 +99,13 @@ class KdpPrepressValidationTests(unittest.TestCase):
         self.assertNotIn("المخطوطة العربية الكاملة", body)
         self.assertNotIn("نسخة موحّدة للمراجعة", body)
         self.assertNotIn("حقوق النشر © 2026", body)
+
+    def test_bridegroom_dies_while_driving_directly_to_the_wedding_venue(self):
+        english = builder.source_text(builder.EN)
+        arabic = builder.source_text(builder.AR)
+        en_chapter30 = english.split("# Chapter 30", 1)[1].split("# Chapter 31", 1)[0]
+        ar_chapter30 = arabic.split("# الفصل الثلاثون", 1)[1].split("# الفصل الحادي والثلاثون", 1)[0]
+        self.assertIn("drove directly to the wedding venue", en_chapter30)
+        self.assertIn("on his way to the wedding venue", en_chapter30)
+        self.assertIn("متجهًا مباشرة إلى مكان حفل الزفاف", ar_chapter30)
+        self.assertIn("في طريقه إلى حفل الزفاف", ar_chapter30)
