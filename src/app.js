@@ -1,4 +1,5 @@
 import { createProject, normalizeChapter, sortChapters, validateProject } from "./core/manuscript.js";
+import { buildDocx, buildEpub, inspectProjectForExport } from "./core/exporters.js";
 
 const STORAGE_KEY = "zubair-publishing-engine:v1";
 const $ = (selector) => document.querySelector(selector);
@@ -94,6 +95,10 @@ function updateQuality() {
     ? `${state.project.chapters.length} فصل · ${result.errors.length} ملاحظة بنيوية`
     : "أنشئ كتاباً وأضف فصوله لبدء الفحص.";
   $("#run-validation").disabled = !state.project;
+  const exportCheck = state.project ? inspectProjectForExport(state.project) : { valid: false };
+  $("#export-docx").disabled = !exportCheck.valid;
+  $("#export-epub").disabled = !exportCheck.valid || state.project?.language !== "en";
+  $("#export-status").textContent = !state.project ? "أنشئ كتاباً أولاً." : !exportCheck.valid ? exportCheck.errors[0] : state.project.language === "ar" ? "المخطوطة العربية جاهزة لتصدير DOCX." : "المخطوطة الإنجليزية جاهزة لتصدير DOCX وEPUB.";
   const list = $("#validation-results");
   list.replaceChildren();
   for (const error of result.errors) {
@@ -168,6 +173,24 @@ $("#chapter-form").addEventListener("submit", (event) => {
 $("#run-validation").addEventListener("click", () => {
   updateQuality();
   showToast("اكتمل الفحص البنيوي الأولي.");
+});
+
+$("#export-docx").addEventListener("click", () => {
+  if (!state.project) return;
+  try {
+    const data = buildDocx(state.project);
+    downloadBlob(new Blob([data], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }), `${safeFilename(state.project.title)}.docx`);
+    showToast("تم إنشاء ملف DOCX.");
+  } catch (error) { showToast(error.message); }
+});
+
+$("#export-epub").addEventListener("click", () => {
+  if (!state.project) return;
+  try {
+    const data = buildEpub(state.project);
+    downloadBlob(new Blob([data], { type: "application/epub+zip" }), `${safeFilename(state.project.title)}.epub`);
+    showToast("تم إنشاء ملف EPUB.");
+  } catch (error) { showToast(error.message); }
 });
 
 $("#export-project").addEventListener("click", () => {
