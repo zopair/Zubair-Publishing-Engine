@@ -4,7 +4,23 @@ The morning arrived clear and cool.
 
 At the venue, staff moved between the garden and the glass pavilion, checking chairs, flowers, and the small details that had occupied so many conversations. The ceremony space overlooked a stretch of water. White flowers and soft green leaves lined the aisle. The tables were simple, with candles and handwritten place cards.
 
-Michael arrived with David and Ashley. He wore a dark suit and a pale tie Margaret had chosen. He checked the rings, the schedule, and the weather more times than necessary.
+Emily was getting ready at her parents' house. Sophia adjusted the veil. Ashley checked the clasp. Sarah made sure Emily had eaten something. Olivia held the printed readings. Elizabeth fastened the earrings that had belonged to Emily's grandmother.
+
+“There,” Elizabeth said.
+
+Emily looked at herself in the mirror. She recognized the woman in the reflection, though the day made her seem both familiar and new.
+
+“You look beautiful,” Elizabeth said.
+
+Emily took her mother's hand. “Thank you for everything.”
+
+“You don't have to thank me today.”
+
+“I do.”
+
+They hugged.
+
+Across town, Michael was at his parents' house with David and Ashley. He wore a dark suit and the pale tie Margaret had chosen. He checked the rings, the schedule, and the weather more times than necessary.
 
 “You look fine,” Ashley said.
 
@@ -16,120 +32,148 @@ David adjusted his jacket. “You look like a man who is ready.”
 
 Michael smiled. “I hope so.”
 
-Margaret arrived shortly afterward. She stopped when she saw her son standing near the entrance.
+Margaret came down the stairs carrying a small paper bag.
 
-For a moment, she did not speak.
+“I found these at the bakery,” she said. “The cinnamon rolls Emily likes.”
 
-“Mom?” he asked.
+Michael laughed. “You didn't have to.”
 
-She touched his cheek. “You look so much like your father did on our wedding day.”
+“I know. That's why it's a gift.”
 
-David came closer. “I was considerably more handsome.”
+He took the bag and looked inside. The rolls were wrapped carefully, still warm.
 
-Margaret laughed through tears. “You were considerably more nervous.”
+“Take them to the venue,” Margaret said. “She may not have time to eat before the ceremony.”
 
-Michael hugged her.
+“I will.”
 
-At the Bennett house, Emily was getting ready with the women. The dress fit exactly as it had during the final fitting. Sophia adjusted the veil. Ashley checked the clasp. Sarah made sure Emily had eaten something. Olivia held the printed reading.
+He checked the ring box one more time, then placed it in his inside pocket. His car was parked outside. David offered to drive, but Michael said he wanted to collect one last thing from the apartment before heading to the venue. It would take only a few minutes, and he wanted to bring the small wooden photograph box Emily had made years earlier. He thought they could place it on the table beside the guest book.
 
-Elizabeth fastened the earrings that had belonged to Emily's grandmother.
+“Don't be late,” Ashley warned.
 
-“There,” she said.
+“I won't.”
 
-Emily looked at herself in the mirror. She recognized the woman in the reflection, though the day made her seem both familiar and new.
+Margaret touched his cheek. “Drive carefully.”
 
-“You look beautiful,” Elizabeth said.
+“I will, Mom.”
 
-Emily took her mother's hand. “Thank you for everything.”
+He kissed her forehead, waved to David and Ashley, and stepped outside.
 
-Elizabeth smiled. “You don't have to thank me today.”
+At the Bennett house, Emily's phone lay on the dressing table. She was listening to Sarah tell a story about their school days when it vibrated.
 
-“I do.”
+**Michael:** Leaving now. I have one more surprise.  
+**Emily:** You are not allowed to add surprises to the schedule.  
+**Michael:** This one is small.  
+**Emily:** Like the cinnamon rolls?  
+**Michael:** Maybe.  
+**Emily:** I love you. See you soon.  
+**Michael:** I love you, Emily. Soon.
 
-They hugged.
+She smiled at the screen.
 
-The ceremony began a little after noon. Guests took their seats. James walked Emily toward the garden entrance, his arm steady beneath her hand.
+The ceremony was scheduled for noon. Guests had begun arriving. James was checking the transport arrangements. Elizabeth moved between the rooms, trying to appear calm. Sarah took a photograph of Emily near the window.
 
-At the end of the aisle, Michael waited.
+“You look happy,” Sarah said.
 
-When he saw her, the noise of the gathering seemed to fall away. He did not see the flowers or the chairs or the guests. He saw Emily, walking toward him with the expression he had loved since the first years of school.
+“I am.”
 
-She reached him.
+“Then remember this feeling.”
 
-“Hi,” she whispered.
+Emily looked down at the ring on her finger. It was the engagement ring Michael had given her by the river. The wedding band waited in a small box at the venue.
 
-“Hi,” he replied.
+“I will,” she said.
 
-James kissed her cheek, then placed her hand in Michael's.
+At 11:17, Michael's car approached an intersection a few miles from the apartment. A delivery van entered the junction against the light. There was no time for a full stop, no clean way to avoid the impact. The sound was sudden and violent. The paper bag slid from the passenger seat. The small wooden photograph box struck the floor.
 
-The ceremony was simple. Olivia read the passage they had chosen about building a shared life. The officiant spoke about partnership, honesty, and the work of keeping promises. Then Emily and Michael read their vows.
+A driver behind him called emergency services.
 
-Emily's voice trembled at first.
+The morning split into two versions of itself: the one in which a wedding was about to begin, and the one in which strangers were running toward a damaged car.
 
-“I cannot promise that I will always understand what you need before you say it,” she said. “But I promise to keep asking. I cannot promise that I will never be afraid, but I promise not to let fear make every decision for us. I promise to make room for your dreams, to tell you the truth, to laugh with you whenever life gives us a reason, and to sit beside you when it doesn't.”
+At the venue, the guests took their seats.
 
-Michael held her hands.
+Margaret checked her phone. No message.
 
-“I promise to keep showing up,” he said. “Not only when the day is easy or when I know what to say. I promise to respect the person you are and the person you are still becoming. I will celebrate your work, protect the space you need to create, and remember that our life is made in the ordinary moments as much as the extraordinary ones. I choose you, Emily, and I will keep choosing you.”
+David called Michael. The call rang, then went to voicemail.
 
-They exchanged rings.
+“He may be driving,” Ashley said.
 
-When the officiant pronounced them married, the guests rose in applause. Margaret cried openly. Elizabeth held James's hand. Ashley cheered. Sarah laughed and wiped her eyes. Sophia and Olivia embraced. Madison clapped with a bright smile.
+Margaret nodded, but her hands had begun to tremble.
 
-Michael kissed Emily.
+At the Bennett house, Emily was ready. The dress fell softly around her, the embroidered detail hidden inside the cuff. She held her bouquet while Sarah fixed one last strand of hair.
 
-The world did not change shape. The water continued moving. The flowers remained where they were. But something important had been named aloud, in front of the people who mattered.
+“Five minutes,” James called from the hall.
 
-At the reception, the room filled with conversation and music. James gave a short speech that began with a story about Emily's first school notebook and ended with a welcome to Michael. David spoke about the way Michael had always tried to repair broken things, sometimes before understanding how they had broken. Margaret and Elizabeth told the story of their old school trip, with the familiar disagreement about whether the map had been upside down or whether it had been a menu.
+Emily took a breath.
 
-The guests laughed.
+Then Elizabeth's phone rang.
 
-Sarah gave a toast about the library window and the pencil case. Ashley added a correction that made Michael groan. Sophia complimented the flowers. Olivia read a short note about friendship and the people who help us become ready for love.
+She answered with a smile that disappeared before she spoke.
 
-Then the music began.
+“Hello?”
 
-Michael and Emily danced beneath the soft lights. They moved slowly, close enough to hear each other's breathing.
+A pause.
 
-“Are you happy?” he asked.
+“What hospital?”
 
-Emily looked up at him. “More than I can say.”
+Sarah looked up.
 
-“Good.”
+Elizabeth's face changed. She sat down as if the floor had moved beneath her.
 
-She rested her head against his shoulder.
+“Is he conscious?” she asked.
 
-After the first dance, the floor filled. Margaret danced with David. Elizabeth danced with James. Ashley pulled Sarah into a lively turn. Sophia and Olivia laughed as they tried to follow the rhythm. Madison joined a group of friends near the edge of the floor.
+Emily turned toward her mother.
 
-At one point, Emily caught sight of the two mothers standing together, their hands linked as they watched the room.
+“Mom?”
 
-She thought of the photographs in Margaret's tin box, the old stories, and the years that had brought their families to this day.
+Elizabeth covered the phone with one hand. She could not find the words.
 
-Later, Michael and Emily stepped outside for a few minutes. The garden was quieter now. The air had cooled, and the lights from the pavilion reflected in the water.
+James came into the room. He took the phone from Elizabeth and listened. His expression became still.
 
-“Mrs. Reed,” Emily said.
+Emily felt the room narrow.
 
-Michael looked at her. “Mrs. Reed?”
+“What happened?” she asked.
 
-“I'm practicing.”
+No one answered quickly enough.
 
-He laughed. “Mr. Bennett?”
+“Michael?” she said.
 
-“That sounds strange.”
+Sarah came to her side. “Emily—”
 
-“Very.”
+“What happened to Michael?”
 
-She took his hand. “I like being your wife.”
+James lowered the phone. “There has been an accident. He's been taken to the hospital.”
 
-He looked at her for a long moment. “I like being your husband.”
+Emily's bouquet slipped from her hand.
 
-She smiled. “We should probably get used to it.”
+She did not remember leaving the house. She remembered the car door, the seat belt across her dress, Sarah's hand around hers, and the same question repeating in her head.
 
-“We have time.”
+At the hospital, Margaret was already there. David stood beside her, his face drained of colour. Ashley was crying quietly. A doctor came to speak with the family.
 
-They kissed beneath the garden lights.
+The words were careful. The injuries were severe. The emergency team had done everything they could. Michael had not survived.
 
-When they returned to the reception, the music was louder and the room was full of people who loved them. The night stretched ahead with dancing, photographs, and stories that would be repeated for years.
+For a moment, Emily did not understand the sentence.
 
-It was the day they had chosen.
+Then she understood it all at once.
 
-And beneath all the flowers and music, the promise was simple: tomorrow, they would begin choosing each other again.
+“No,” she said.
+
+The doctor lowered his voice.
+
+“No. He's supposed to be getting married.”
+
+Margaret made a sound Emily had never heard from another human being. David held her, but she seemed unable to feel his arms. Ashley covered her mouth.
+
+Emily stood in her wedding dress beneath the hospital lights. The earrings from her grandmother were still in place. Her bouquet was gone. The ring on her finger caught the fluorescent light.
+
+She looked toward the corridor as if Michael might still come through it, apologizing for being late, carrying cinnamon rolls and a box of photographs.
+
+He did not.
+
+Outside, the day continued. Cars moved through the streets. The venue waited with its flowers and empty chairs. Guests who had travelled to celebrate began receiving messages they could not understand.
+
+The wedding did not happen.
+
+The life they had planned did not begin in the way they had imagined.
+
+But the love that had brought them to that morning was real. It remained in the hands holding Emily upright, in Margaret's broken silence, in the family that had gathered around them, and in every ordinary day that had led them there.
+
+The day they had chosen became the day none of them would ever forget.
