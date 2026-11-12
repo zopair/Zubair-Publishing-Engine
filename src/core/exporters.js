@@ -76,6 +76,7 @@ function normalized(project) {
 export function inspectProjectForExport(project = {}) {
   const errors = [];
   if (!String(project.title ?? "").trim()) errors.push("عنوان الكتاب مطلوب.");
+  if (!String(project.author ?? "").trim()) errors.push("اسم المؤلف مطلوب لبيانات النشر.");
   if (!["en", "ar"].includes(project.language)) errors.push("لغة الكتاب يجب أن تكون الإنجليزية أو العربية.");
   const chapters = Array.isArray(project.chapters) ? project.chapters : [];
   if (!chapters.length) errors.push("أضف فصلاً واحداً على الأقل.");
@@ -116,7 +117,7 @@ export function buildEpub(input) {
   const contentsLabel = rtl ? "المحتويات" : "Contents";
   const identifier = xml(project.id ?? project.title);
   const title = xml(project.title);
-  const author = xml(project.author || "Unknown Author");
+  const author = xml(project.author.trim());
   const description = xml(project.description || "");
   const manifest = `<item id="title" href="text/title.xhtml" media-type="application/xhtml+xml"/>` + project.chapters.map((chapter, index) =>
     `<item id="chapter-${index + 1}" href="text/chapter-${index + 1}.xhtml" media-type="application/xhtml+xml"/>`
@@ -140,7 +141,7 @@ export function buildEpub(input) {
 export function buildDocx(input) {
   const project = requireValid(input);
   const rtl = project.language === "ar";
-  const author = xml(project.author || "Unknown Author");
+  const author = xml(project.author.trim());
   const body = project.chapters.map((chapter) => {
     const title = `<w:p><w:pPr><w:pStyle w:val="Heading1"/>${rtl ? "<w:bidi/>" : ""}</w:pPr><w:r><w:t xml:space="preserve">${xml(chapter.title)}</w:t></w:r></w:p>`;
     const content = String(chapter.content).split(/\r?\n/).map((line) =>
