@@ -37,7 +37,7 @@ The image should feel personal and restrained. The central visual is the preserv
 - English front: **A Gift from the One Who Left**
 - Arabic front: **هدية من الغائب**
 - English author line: **Aly HUSSEIN FEKRY**
-- Arabic author line: pending the author's confirmed Arabic-script spelling.
+- Arabic author line: **على حسين فكرى**.
 - Use a refined, highly legible title treatment. The English and Arabic covers should feel like editions of the same book, not unrelated designs.
 - Check Arabic shaping, joining, baseline, and RTL composition manually; do not mirror the English layout mechanically.
 
@@ -64,5 +64,5 @@ Use the KDP Cover Calculator/template after the final print interior is ready. T
 
 - Approve the visual direction before final artwork.
 - Approve title/author placement and legibility at thumbnail size.
-- Confirm Arabic author spelling before producing the Arabic cover.
+- Set the Arabic author line exactly as **على حسين فكرى** on the Arabic cover.
 - Review the final full-wrap PDF against the KDP template and the print preview.
