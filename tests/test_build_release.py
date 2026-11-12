@@ -49,14 +49,15 @@ class KdpPrepressValidationTests(unittest.TestCase):
         self.assertIn("بدأ الأسبوع الأول من البرنامج الصيفي", chapter13)
         self.assertNotIn("بحلول نهاية الصيف", chapter13)
 
-    def test_pdf_validator_rejects_pages_containing_only_a_page_number(self):
-        from reportlab.pdfgen import canvas
+    def test_pdf_validator_rejects_blank_pages(self):
+        from pypdf import PdfWriter
         from tempfile import TemporaryDirectory
         with TemporaryDirectory() as tmp:
             path = Path(tmp) / "blank-page.pdf"
-            c = canvas.Canvas(str(path), pagesize=(432, 648))
-            c.drawString(200, 30, "12")
-            c.showPage(); c.save()
+            writer = PdfWriter()
+            writer.add_blank_page(width=432, height=648)
+            with path.open("wb") as stream:
+                writer.write(stream)
             with self.assertRaisesRegex(AssertionError, "blank or page-number-only"):
                 builder.validate_pdf_document(path, 6, 9)
 
