@@ -377,8 +377,9 @@ def main():
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
             "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_front_matter":"single title and copyright section","arabic_docx_paragraphs":arabic_docx_paragraphs,
             "english_print_pdf":"generated and prepress-validated","print_pdf_prepress":pdf_qa,
-            "paperback_cover_dimensions":{"page_count":pages,"paper":"cream","spine_width_in":round(pages*0.0025,4),
-                "full_wrap_width_in":round(12.25+pages*0.0025,4),"full_wrap_height_in":9.25},
+            "paperback_cover_dimensions":{"interior_pdf_pages":pages,"kdp_rounded_page_count":pages+(pages%2),"paper":"cream",
+                "spine_width_in":round((pages+(pages%2))*0.0025,4),
+                "full_wrap_width_in":round(12.25+(pages+(pages%2))*0.0025,4),"full_wrap_height_in":9.25},
             "covers":"front-cover previews only; author approval required",
             "paperback_full_wrap":"deferred until trim/paper/page-count confirmation and cover approval",
             "hashes":manifest}
