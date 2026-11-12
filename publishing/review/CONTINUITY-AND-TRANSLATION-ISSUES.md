@@ -119,6 +119,27 @@ The sentence «لقد فقدت ابني، لكن أصبح لدي ابنة الآ
 
 **Proposed correction:** «لقد فقدت ابني، لكن أصبحت لديّ ابنة الآن.» This is a minimal grammatical correction; preserve the remainder of Margaret's speech.
 
+### I. Critical release blocker — consolidated English manuscript contains obsolete wedding/honeymoon chapters
+
+**Consolidated manuscript:** `manuscript/en/FULL-ENGLISH-MANUSCRIPT.md`  
+**Current grief-arc chapter files:** `chapter-31-the-morning-that-never-came.md` and `chapter-32-the-things-that-remain.md`  
+**Obsolete alternate files:** `chapter-31-the-first-morning-after.md` and `chapter-32-the-life-between-celebrations.md`
+
+The English consolidated manuscript currently contains the obsolete versions of Chapters 31 and 32. Those chapters describe Emily and Michael's honeymoon and married life after the wedding. This contradicts Chapter 30, where Michael dies in the wedding-day accident, and it breaks the central grief arc.
+
+Separate English files already exist for the correct post-accident Chapters 31 and 32. The Arabic consolidated manuscript and its index use the grief-arc versions. The English repository therefore has 38 chapter files for a 36-chapter novel because both versions of Chapters 31 and 32 remain in the tree, while the English consolidated manuscript still includes the obsolete pair.
+
+**Priority:** P0 — publication blocker.
+
+**Proposed correction after approval:**
+1. Treat `the-morning-that-never-came` and `the-things-that-remain` as the canonical English Chapters 31 and 32, subject to the author's confirmation.
+2. Rebuild `FULL-ENGLISH-MANUSCRIPT.md` from the canonical 36 chapter files plus the epilogue.
+3. Move the obsolete honeymoon/married-life files into an explicitly labelled archive or remove them only after the author confirms they are superseded.
+4. Add an English chapter index so the canonical sequence is unambiguous.
+5. Re-run a complete English/Arabic consolidated-to-chapter comparison.
+
+This is not a stylistic decision. It is necessary to prevent the published English book from contradicting its own wedding-day death scene.
+
 ## 3. Continuity checks that currently align
 
 - Chapter 12 acceptance into the summer engineering program leads into Chapter 13's first week.
