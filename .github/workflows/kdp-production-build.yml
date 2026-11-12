@@ -14,7 +14,8 @@ permissions:
   actions: read
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,7 +24,7 @@ jobs:
       - name: Install publishing toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core fonts-noto-extra
+          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-fonts-recommended fonts-noto-core fonts-noto-extra
           python -m pip install --upgrade pip
           python -m pip install pillow pypdf python-docx lxml arabic-reshaper python-bidi
       - name: Run manuscript regression tests
