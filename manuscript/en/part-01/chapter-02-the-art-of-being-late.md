@@ -742,7 +742,7 @@ David shrugged.
 
 “I'm just trying to understand the academic situation.”
 
-Ashley burst out laughing.
+His mother burst out laughing.
 
 Michael shook his head.
 
@@ -754,7 +754,7 @@ He tried to hide his smile.
 
 It did not work.
 
-Ashley noticed.
+His mother noticed.
 
 Of course she noticed.
 
