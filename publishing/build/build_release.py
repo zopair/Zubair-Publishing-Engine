@@ -30,6 +30,19 @@ def source_text(path):
     text = re.split(r"^## (?:Digital Integrity Fingerprint|البصمة الرقمية لسلامة النص)\s*$", text, flags=re.M)[0]
     return text
 
+def prepare_english_body(text):
+    # Remove archive-only title and copyright pages; the KDP builder adds one clean front matter.
+    match = re.search(r"^# Chapter 1\\b", text, flags=re.M)
+    if not match:
+        raise AssertionError("English KDP body must contain Chapter 1")
+    body = text[match.start():].lstrip()
+    if "Complete English Manuscript" in body:
+        raise AssertionError("English KDP body contains archive-only editorial front matter")
+    if "Copyright © 2026" in body:
+        raise AssertionError("English KDP body contains a duplicate copyright section")
+    return body
+
+
 def prepare_arabic_body(text):
     # The archive master includes its own review title and copyright block.
     # The KDP builder supplies a clean, single front-matter section, so retain
@@ -110,6 +123,32 @@ def pdf_prepress_report(path, page_count):
         "encrypted": reader.is_encrypted,
         "metadata": "stripped",
     }
+
+
+def validate_english_epub(path):
+    with zipfile.ZipFile(path, "r") as archive:
+        bad_member = archive.testzip()
+        if bad_member:
+            raise AssertionError(f"EPUB ZIP integrity failure: {bad_member}")
+        names = archive.namelist()
+        if not names or names[0] != "mimetype":
+            raise AssertionError("EPUB mimetype must be the first ZIP member")
+        xhtml = "\\n".join(archive.read(name).decode("utf-8", errors="replace")
+                            for name in names if name.lower().endswith((".xhtml", ".html", ".htm")))
+        opf = "\\n".join(archive.read(name).decode("utf-8", errors="replace")
+                          for name in names if name.lower().endswith(".opf"))
+    visible = re.sub(r"<[^>]+>", " ", xhtml)
+    visible = re.sub(r"\\s+", " ", visible)
+    if visible.count(TITLE_EN) != 1:
+        raise AssertionError("English EPUB must contain exactly one visible title")
+    if visible.count("Copyright © 2026 " + AUTHOR_EN) != 1:
+        raise AssertionError("English EPUB must contain exactly one copyright notice")
+    if "Complete English Manuscript" in visible:
+        raise AssertionError("English EPUB contains archive-only editorial front matter")
+    if not re.search(r"<dc:language>\\s*en\\s*</dc:language>", opf, flags=re.I):
+        raise AssertionError("English EPUB language metadata must be en")
+    return {"zip_integrity":"passed","visible_title_count":1,"copyright_count":1,
+            "archive_front_matter":False,"language":"en"}
 
 
 def frontmatter(title, author, lang):
@@ -393,10 +432,13 @@ def main():
     assert_master(en,False); assert_master(ar,True)
     # English Kindle reflowable EPUB
     enmd=OUT/"english-kindle-source.md"
-    enmd.write_text(frontmatter(TITLE_EN,AUTHOR_EN,"en")+en,encoding="utf-8")
-    run(["pandoc",str(enmd),"-o",str(OUT/"A_Gift_from_the_One_Who_Left_Kindle.epub"),
-         "--toc","--toc-depth=1","--split-level=1","--metadata=lang:en",
+    en_body = prepare_english_body(en)
+    enmd.write_text(frontmatter(TITLE_EN,AUTHOR_EN,"en")+en_body,encoding="utf-8")
+    epub_path = OUT/"A_Gift_from_the_One_Who_Left_Kindle.epub"
+    run(["pandoc",str(enmd),"-o",str(epub_path),
+         "--toc","--toc-depth=1","--split-level=1","--epub-title-page=false","--metadata=lang:en",
          "--metadata=title:"+TITLE_EN,"--metadata=author:"+AUTHOR_EN])
+    epub_qa = validate_english_epub(epub_path)
     # Arabic Kindle DOCX, explicitly patched to RTL
     armd=OUT/"arabic-kindle-source.md"
     ar_body = prepare_arabic_body(ar)
@@ -425,6 +467,7 @@ def main():
             manifest[p.name]=hashlib.sha256(p.read_bytes()).hexdigest()
     (OUT/"SHA256SUMS.txt").write_text("".join(f"{v}  {k}\n" for k,v in manifest.items()),encoding="utf-8")
     report={"english_chapters":36,"arabic_chapters":36,"english_print_pages":pages,
+            "english_epub_qa":epub_qa,
             "trim":"6 x 9 in (validated physical page boxes)","paper":"cream, black ink (production assumption; confirm in KDP setup)",
             "bleed":"no bleed","english_epub":"generated","arabic_rtl_docx":"generated and validated","arabic_front_matter":"single title and copyright section","arabic_docx_paragraphs":arabic_docx_paragraphs,
             "english_print_pdf":"generated and prepress-validated","print_pdf_prepress":pdf_qa,
