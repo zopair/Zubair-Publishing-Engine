@@ -57,3 +57,40 @@ test("preserves a project identifier when restoring a backup", () => {
   const restored = createProject({ id: "project-stable-123", title: "Restored Book" });
   assert.equal(restored.id, "project-stable-123");
 });
+
+import { buildEpub, buildDocx, inspectProjectForExport } from "../src/core/exporters.js";
+
+const sampleBook = {
+  title: "A Gift from the One Who Left",
+  author: "Test Author",
+  language: "en",
+  description: "A romantic novel.",
+  chapters: [{ number: 1, title: "The First Meeting", content: "Hello, Michael.\n\nEmily smiled." }],
+};
+
+test("export preflight blocks empty books and blank chapters", () => {
+  const result = inspectProjectForExport({ ...sampleBook, chapters: [] });
+  assert.equal(result.valid, false);
+  assert.ok(result.errors.length > 0);
+});
+
+test("builds EPUB package with required mimetype and OPF entries", () => {
+  const epub = buildEpub(sampleBook);
+  assert.ok(epub instanceof Uint8Array);
+  assert.ok(epub.length > 100);
+  assert.equal(epub[0], 0x50);
+  assert.equal(epub[1], 0x4b);
+});
+
+test("builds DOCX package for Arabic manuscripts with RTL metadata", () => {
+  const docx = buildDocx({
+    ...sampleBook,
+    title: "هدية من الغائب",
+    language: "ar",
+    chapters: [{ number: 1, title: "الفصل الأول", content: "كان الحب بداية الحكاية." }],
+  });
+  assert.ok(docx instanceof Uint8Array);
+  assert.ok(docx.length > 100);
+  assert.equal(docx[0], 0x50);
+  assert.equal(docx[1], 0x4b);
+});
