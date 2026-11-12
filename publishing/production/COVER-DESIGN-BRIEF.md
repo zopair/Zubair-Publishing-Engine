@@ -49,9 +49,11 @@ The image should feel personal and restrained. The central visual is the preserv
 4. Editable source artwork and fonts/licensing record.
 5. Thumbnail test images for both Kindle covers.
 
-## 6. Paperback production dependency
+**KDP language limitation:** Arabic is currently supported for Kindle eBooks only; KDP does not currently offer Arabic-language paperback publishing. Therefore no Arabic paperback full-wrap file will be produced for KDP. The Arabic deliverables are the RTL Kindle manuscript and the Arabic Kindle front-cover image.
 
-Do not calculate or finalize the spine or full-wrap dimensions yet. First lock:
+## 6. English Paperback production dependency
+
+Do not calculate or finalize the spine or full-wrap dimensions until the final English print interior is built and validated. First lock:
 - Trim size.
 - Paper type and color.
 - Final interior page count.
