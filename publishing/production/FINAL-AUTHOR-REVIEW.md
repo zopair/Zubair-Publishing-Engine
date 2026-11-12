@@ -4,6 +4,7 @@
 **Review snapshot:** 2026-11-12  
 **Review branch:** `release/final-author-review`  
 **Review baseline:** `production/ip-protection-and-digital-fingerprints`  
+**Arabic author display:** على حسين فكرى  
 **Purpose:** One consolidated author-review checkpoint before formatting and KDP release. This report does not authorize publication, legal filing, or a manuscript rewrite.
 
 ## 1. Canonical story lock
@@ -52,18 +53,18 @@ The current consolidated Markdown manuscripts are source masters, not publicatio
 
 ## 4. Author decisions still required
 
-1. **Arabic author display name:** confirm the exact Arabic spelling to appear on the Arabic title page, cover, and KDP listing.
+1. **Arabic author display name — CONFIRMED:** على حسين فكرى. Use this exact spelling on the Arabic title page, cover, copyright notice, and KDP listing.
 2. **English paperback:** choose trim size and paper type before interior layout and cover calculation.
 3. **Cover direction:** approve the wooden photograph-box concept before final artwork.
 4. **KDP listing:** approve both descriptions; choose marketplace, territories, prices, categories, keywords, and KDP Select status.
 5. **Rights and disclosure:** confirm rightsholder/permissions and complete KDP's AI-generated content disclosure accurately. The project history includes substantial AI-generated text and translation; do not classify that as AI-assisted editing only.
-6. **Formal Egypt deposit:** verify current Dar al-Kotob requirements and submit separately. No government deposit, registration certificate, ISBN, or official filing is claimed as completed.
+6. **Egypt deposit:** Not planned. The author has chosen GitHub repository history, review records, and SHA-256 manifests as the project's evidence archive; this is not an official government registration or legal certificate.
 
 ## 5. Intellectual-property and integrity status
 
 - Copyright notices and source-text SHA-256 fingerprints have been added.
 - SHA-256 is an integrity hash, not encryption, a digital signature, official timestamp, copyright registration, or proof of authorship by itself.
-- The current source hashes do not apply to future EPUB, DOCX, PDF, or cover files.
+- The Arabic author attribution was updated to **على حسين فكرى** and its source fingerprint recalculated. The current source hashes do not apply to future EPUB, DOCX, PDF, or cover files.
 - After export, create a release-specific manifest containing a separate SHA-256 for every final distribution artifact and preserve the exact files, Git commit, approvals, licences, and evidence trail.
 - No government filing or KDP submission has been made.
 
@@ -82,4 +83,4 @@ See `INTELLECTUAL-PROPERTY-AND-INTEGRITY.md` for the evidence-preservation and o
 
 ## 7. Approval boundary
 
-This checkpoint is for final author review. It does **not** merge earlier pull requests, publish the book, submit files to KDP, purchase ISBNs, file government paperwork, or certify legal ownership. Those actions require the author's explicit approval and, where applicable, official third-party processing.
+This checkpoint is for final author review. The author has confirmed the Arabic display name **على حسين فكرى** and chosen not to pursue Egyptian deposit. GitHub history and hashes are the selected evidence archive, not an official registration. This checkpoint does **not** merge earlier pull requests, publish the book, submit files to KDP, purchase ISBNs, file government paperwork, or certify legal ownership. Those actions require the author's explicit approval and, where applicable, official third-party processing.
