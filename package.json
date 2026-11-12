@@ -1,0 +1,14 @@
+{
+  "name": "zubair-publishing-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mobile-first, local-first publishing workspace for Kindle Direct Publishing.",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
