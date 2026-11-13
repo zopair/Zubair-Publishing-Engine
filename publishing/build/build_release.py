@@ -389,13 +389,25 @@ def draw_cover(title, author, out, arabic=False):
     d.rounded_rectangle((75,75,W-75,H-75),radius=22,outline=(197,155,108,150),width=4)
     im.convert("RGB").save(out,quality=95)
 
-def create_full_wrap(front_path, output_path, interior_pages):
+def paperback_wrap_geometry(interior_pages):
+    if not isinstance(interior_pages, int) or interior_pages < 24:
+        raise ValueError("Paperback interior page count must be an integer of at least 24")
     rounded = kdp_rounded_page_count(interior_pages)
     spine_in = rounded * 0.0025
-    width_in = 12.25 + spine_in
-    height_in = 9.25
-    if (rounded, round(spine_in, 3), round(width_in, 3), height_in) != (280, 0.700, 12.950, 9.25):
-        raise AssertionError("Paperback wrap does not match locked 280-page KDP geometry")
+    return {
+        "page_count_basis": rounded,
+        "spine_width_in": spine_in,
+        "width_in": 12.25 + spine_in,
+        "height_in": 9.25,
+    }
+
+
+def create_full_wrap(front_path, output_path, interior_pages):
+    geometry = paperback_wrap_geometry(interior_pages)
+    rounded = geometry["page_count_basis"]
+    spine_in = geometry["spine_width_in"]
+    width_in = geometry["width_in"]
+    height_in = geometry["height_in"]
     dpi = 300
     width, height = round(width_in*dpi), round(height_in*dpi)
     bleed, trim, spine = 38, 1800, round(spine_in*dpi)
