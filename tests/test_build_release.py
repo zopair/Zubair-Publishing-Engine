@@ -152,6 +152,19 @@ class EnglishEpubAndWrapRegressionTests(unittest.TestCase):
             self.assertEqual(result["copyright_count"], 1)
 
     def test_279_print_pages_produce_exact_280_page_cover_geometry(self):
-        self.assertEqual(builder.kdp_rounded_page_count(279), 280)
-        self.assertEqual(round(12.25 + 280 * 0.0025, 3), 12.950)
-        self.assertEqual(round(280 * 0.0025, 3), 0.700)
+        geometry = builder.paperback_wrap_geometry(279)
+        self.assertEqual(geometry["page_count_basis"], 280)
+        self.assertEqual(round(geometry["width_in"], 3), 12.950)
+        self.assertEqual(round(geometry["spine_width_in"], 3), 0.700)
+        self.assertEqual(geometry["height_in"], 9.25)
+
+    def test_even_interior_page_count_uses_its_actual_geometry(self):
+        geometry = builder.paperback_wrap_geometry(278)
+        self.assertEqual(geometry["page_count_basis"], 278)
+        self.assertEqual(round(geometry["spine_width_in"], 3), 0.695)
+        self.assertEqual(round(geometry["width_in"], 3), 12.945)
+        self.assertEqual(geometry["height_in"], 9.25)
+
+    def test_paperback_wrap_rejects_page_counts_below_kdp_minimum(self):
+        with self.assertRaises(ValueError):
+            builder.paperback_wrap_geometry(20)
